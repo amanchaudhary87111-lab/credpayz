@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CredPayZ — Self-Service Transfers (Coming Soon)</title>
+<meta name="description" content="CredPayZ self-service transfers — coming soon. Soon you will be able to do credit card to card and card to bank transfers online yourself.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="author" content="CredPayZ">
+<meta name="theme-color" content="#050509">
+<meta name="application-name" content="CredPayZ">
+<meta name="apple-mobile-web-app-title" content="CredPayZ">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&family=Unbounded:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--black:#050509;--deep:#0A0A1A;--card:#0F0F23;--card2:#14142A;--line:rgba(255,255,255,0.07);--line2:rgba(255,255,255,0.13);--white:#FFFFFF;--off:#B0B8D0;--muted:#6B748A;--gold:#F5C842;--gold2:#FFD96A;--teal:#00E5C3;--purple:#8B5CF6;--pink:#EC4899;--font-disp:'Unbounded',sans-serif;--font-body:'Plus Jakarta Sans',sans-serif;--font-mono:'Space Mono',monospace}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--black);color:var(--white);overflow-x:hidden;line-height:1.6}a{text-decoration:none;color:inherit}button{cursor:pointer;border:none;background:none;font-family:inherit}
+.bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:64px 64px;animation:gridDrift 40s linear infinite}
+@keyframes gridDrift{from{transform:translate(0,0)}to{transform:translate(64px,64px)}}
+.orb{position:absolute;border-radius:50%;filter:blur(130px);animation:orbF 14s ease-in-out infinite alternate}
+.orb.o1{width:600px;height:600px;top:-150px;left:-100px;background:radial-gradient(circle,rgba(139,92,246,.18),transparent 70%);animation-delay:0s}
+.orb.o2{width:500px;height:500px;bottom:-100px;right:-100px;background:radial-gradient(circle,rgba(0,229,195,.12),transparent 70%);animation-delay:-5s}
+@keyframes orbF{0%{transform:translate(0,0)}100%{transform:translate(40px,60px)}}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
+section{position:relative;z-index:2}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .4s}
+.nav.scrolled{background:rgba(5,5,9,.88);backdrop-filter:blur(28px);border-bottom:1px solid var(--line2)}
+.nav-in{display:flex;align-items:center;height:72px;padding:0 24px;max-width:1200px;margin:0 auto;gap:16px}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--font-disp);font-size:1.15rem;font-weight:700;letter-spacing:-.01em;flex-shrink:0}
+.brand-icon{width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,var(--gold),var(--teal));display:flex;align-items:center;justify-content:center;font-size:.95rem;font-weight:800;color:var(--black);animation:bPulse 3s ease-in-out infinite}
+@keyframes bPulse{0%,100%{box-shadow:0 0 0 0 rgba(245,200,66,.45)}50%{box-shadow:0 0 0 10px rgba(245,200,66,0)}}
+.brand b{background:linear-gradient(135deg,var(--gold),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;align-items:center;gap:4px;margin-left:auto}
+.nav-links a{font-size:.85rem;font-weight:500;color:var(--off);padding:6px 14px;border-radius:999px;transition:all .25s}
+.nav-links a:hover{color:var(--white);background:rgba(255,255,255,.08)}
+.nav-act{display:flex;align-items:center;gap:10px}
+.btn-ghost-nav{font-size:.85rem;font-weight:600;color:var(--off);padding:8px 18px;border-radius:999px;border:1px solid var(--line2);transition:all .25s}
+.btn-ghost-nav:hover{color:var(--white)}
+.btn-cta-nav{font-size:.85rem;font-weight:700;padding:9px 22px;border-radius:999px;background:linear-gradient(135deg,var(--gold),#D4A017);color:var(--black);transition:all .3s}
+.btn-cta-nav:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(245,200,66,.38)}
+.burger{display:none;font-size:1.4rem;color:var(--white);padding:6px}
+/* SUBHERO */
+.subhero{padding:140px 0 80px;position:relative;overflow:hidden;border-bottom:1px solid var(--line);text-align:center}
+.cs-badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:.7rem;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;border-radius:999px;border:1px solid rgba(245,200,66,.25);background:rgba(245,200,66,.06);margin-bottom:20px;animation:fadeUp .6s .1s both}
+.cs-badge svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round}
+h1.page-title{font-family:var(--font-disp);font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:800;letter-spacing:-.04em;line-height:1.06;color:var(--white);margin-bottom:16px;animation:fadeUp .8s .2s both}
+.hero-sub{font-size:1rem;color:var(--off);max-width:520px;margin:0 auto;line-height:1.7;animation:fadeUp .8s .35s both}
+/* PREVIEW BANNER */
+.preview-banner{display:flex;align-items:flex-start;gap:12px;background:rgba(245,200,66,.06);border:1px solid rgba(245,200,66,.2);border-radius:14px;padding:16px 20px;margin-bottom:32px}
+.preview-banner svg{width:20px;height:20px;stroke:var(--gold);fill:none;stroke-width:1.8;stroke-linecap:round;flex-shrink:0;margin-top:2px}
+.preview-banner span{font-size:.88rem;color:var(--off);line-height:1.6}
+.preview-banner b{color:var(--gold2)}
+/* STEP CARDS */
+.step-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px 32px;margin-bottom:20px;transition:all .4s;position:relative;overflow:hidden}
+.step-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--purple),var(--teal));border-radius:0 2px 2px 0;opacity:.6}
+.step-card:hover{border-color:var(--line2);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.sc-head{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.sc-num{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,rgba(139,92,246,.2),rgba(0,229,195,.1));border:1px solid rgba(139,92,246,.3);display:flex;align-items:center;justify-content:center;font-family:var(--font-disp);font-size:.95rem;font-weight:800;color:var(--purple);flex-shrink:0}
+.sc-head h3{font-family:var(--font-disp);font-size:1rem;font-weight:700;color:var(--white);letter-spacing:-.02em}
+.arow{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:14px}
+.afield{display:flex;flex-direction:column;gap:6px}
+.afield label{font-size:.72rem;font-weight:600;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+.afield input,.afield select{height:46px;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:10px;padding:0 14px;font-size:.88rem;font-family:var(--font-body);color:var(--muted);outline:none;cursor:not-allowed;appearance:none}
+.afield select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B748A' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px}
+.afield select option{background:var(--card2)}
+.upload-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:14px}
+.upload{background:rgba(255,255,255,.02);border:1px dashed rgba(255,255,255,.12);border-radius:12px;padding:24px 16px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;cursor:not-allowed;transition:all .3s}
+.upload svg{width:28px;height:28px;stroke:var(--muted);fill:none;stroke-width:1.5;stroke-linecap:round}
+.upload div{font-size:.88rem;color:var(--muted);font-weight:600}
+.upload small{font-size:.72rem;color:var(--muted);opacity:.6;font-family:var(--font-mono)}
+.btn-disabled{display:inline-flex;align-items:center;gap:8px;font-size:.88rem;font-weight:600;padding:11px 22px;border-radius:999px;border:1px solid var(--line2);color:var(--muted);cursor:not-allowed;opacity:.5;margin-top:10px}
+.btn-primary-disabled{display:inline-flex;align-items:center;gap:8px;font-size:.93rem;font-weight:700;padding:13px 28px;border-radius:999px;background:linear-gradient(135deg,var(--gold),#D4A017);color:var(--black);cursor:not-allowed;opacity:.45;margin-top:10px}
+.security-note{font-size:.78rem;color:var(--muted);margin-top:10px;line-height:1.5;display:flex;align-items:flex-start;gap:6px}
+.security-note svg{width:13px;height:13px;stroke:var(--teal);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px}
+/* WA CTA */
+.wa-cta{text-align:center;margin-top:36px;padding:32px;background:linear-gradient(135deg,rgba(37,211,102,.06),rgba(0,0,0,0));border:1px solid rgba(37,211,102,.2);border-radius:18px}
+.wa-cta p{font-size:.9rem;color:var(--off);margin-bottom:16px}
+.btn-wa{display:inline-flex;align-items:center;gap:10px;font-size:.95rem;font-weight:700;padding:14px 28px;border-radius:999px;background:linear-gradient(135deg,#25D366,#1A9E4B);color:var(--white);transition:all .3s}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(37,211,102,.37)}
+/* FOOTER */
+footer{background:var(--black);border-top:1px solid var(--line);padding:56px 0 28px}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1.5fr;gap:48px;margin-bottom:44px}
+.fbrand p{font-size:.83rem;color:var(--muted);line-height:1.65;margin-top:14px;max-width:320px}
+footer h4{font-family:var(--font-mono);font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+footer a{display:block;font-size:.85rem;color:var(--off);margin-bottom:9px;transition:color .25s}
+footer a:hover{color:var(--teal)}
+.cline{display:flex;align-items:flex-start;gap:9px;margin-bottom:10px}
+.cline svg{width:15px;height:15px;stroke:var(--teal);fill:none;stroke-width:1.8;flex-shrink:0;margin-top:3px}
+.cline a,.cline span{font-size:.8rem;color:var(--off);line-height:1.5}
+.cline a:hover{color:var(--gold)}
+.fbot{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.fbot span{font-size:.76rem;color:var(--muted)}
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:200;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.35);transition:all .3s;animation:waPulse 3s ease-in-out infinite}
+@keyframes waPulse{0%,100%{box-shadow:0 8px 24px rgba(37,211,102,.35),0 0 0 0 rgba(37,211,102,.3)}50%{box-shadow:0 8px 24px rgba(37,211,102,.35),0 0 0 12px rgba(37,211,102,0)}}
+.wa-float:hover{transform:scale(1.12) translateY(-3px)}
+.wa-float svg{width:27px;height:27px;fill:#fff}
+.cursor-glow{position:fixed;pointer-events:none;z-index:1;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.05),transparent 70%);transform:translate(-50%,-50%);transition:left .15s,top .15s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:translateY(0)}
+.blk{padding:80px 0}
+@media(max-width:1024px){.fgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.nav-links,.btn-ghost-nav{display:none}.burger{display:block}.arow,.upload-row{grid-template-columns:1fr}.fgrid{grid-template-columns:1fr}.fbot{flex-direction:column;text-align:center}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}}
+</style>
+</head>
+<body>
+<div class="bg-canvas"><div class="bg-grid"></div><div class="orb o1"></div><div class="orb o2"></div></div>
+<div class="cursor-glow" id="cg"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a href="index.html" class="brand"><div class="brand-icon">C</div><span>Cred<b>PayZ</b></span></a>
+    <nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="features.html">Features</a><a href="index.html#pricing">Pricing</a><a href="contact.html">Contact</a></nav>
+    <div class="nav-act"><a href="https://wa.me/919911312139" class="btn-ghost-nav" target="_blank" rel="noopener">WhatsApp</a><a href="contact.html#apply" class="btn-cta-nav">Get Instant Money</a></div>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- SUBHERO -->
+<section class="subhero">
+  <div class="wrap">
+    <div class="cs-badge">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+      Coming Soon
+    </div>
+    <h1 class="page-title">Do It Yourself, Online</h1>
+    <p class="hero-sub">Soon you'll complete credit card to credit card and credit card to bank transfers right here — no office visit needed. Here's how it will work.</p>
+  </div>
+</section>
+
+<!-- SELF-SERVICE FLOW -->
+<section class="blk">
+  <div class="wrap" style="max-width:780px">
+
+    <!-- PREVIEW BANNER -->
+    <div class="preview-banner rv">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6h.01"/></svg>
+      <span><b>Preview:</b> This feature is being built and isn't active yet. For a transfer today, message us on WhatsApp and we'll handle it for you personally.</span>
+    </div>
+
+    <!-- STEP 1 — Create account -->
+    <div class="step-card rv" style="transition-delay:.1s">
+      <div class="sc-head">
+        <span class="sc-num">1</span>
+        <h3>Create Your Account</h3>
+      </div>
+      <div class="arow">
+        <div class="afield"><label>Mobile Number</label><input type="tel" placeholder="10-digit mobile" disabled></div>
+        <div class="afield"><label>Email ID</label><input type="email" placeholder="you@email.com" disabled></div>
+      </div>
+      <div class="arow">
+        <div class="afield"><label>OTP</label><input type="text" placeholder="6-digit OTP" disabled></div>
+        <div class="afield" style="justify-content:flex-end"><button class="btn-disabled" disabled>Send OTP</button></div>
+      </div>
+    </div>
+
+    <!-- STEP 2 — KYC -->
+    <div class="step-card rv" style="transition-delay:.15s">
+      <div class="sc-head">
+        <span class="sc-num">2</span>
+        <h3>Complete Your KYC</h3>
+      </div>
+      <div class="upload-row">
+        <div class="upload">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 16V4M8 8l4-4 4 4"/><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>
+          <div>Upload Aadhaar Card</div>
+          <small>JPG / PNG / PDF</small>
+        </div>
+        <div class="upload">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 16V4M8 8l4-4 4 4"/><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>
+          <div>Upload PAN Card</div>
+          <small>JPG / PNG / PDF</small>
+        </div>
+      </div>
+      <p class="security-note"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg> Aadhaar masking & consent will be applied. Documents are processed via a verified KYC provider and are never stored on this site.</p>
+    </div>
+
+    <!-- STEP 3 — Bank Verify -->
+    <div class="step-card rv" style="transition-delay:.2s">
+      <div class="sc-head">
+        <span class="sc-num">3</span>
+        <h3>Verify Your Bank Account</h3>
+      </div>
+      <div class="arow">
+        <div class="afield"><label>Account Number</label><input placeholder="Bank account number" disabled></div>
+        <div class="afield"><label>IFSC Code</label><input placeholder="IFSC" disabled></div>
+      </div>
+      <button class="btn-disabled" disabled>Verify Account</button>
+      <p class="security-note" style="margin-top:10px"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg> Verification done via penny-drop / bank API with account-holder name match.</p>
+    </div>
+
+    <!-- STEP 4 — Card -->
+    <div class="step-card rv" style="transition-delay:.25s">
+      <div class="sc-head">
+        <span class="sc-num">4</span>
+        <h3>Add &amp; Verify Your Credit Card</h3>
+      </div>
+      <div class="afield"><label>Credit Card</label><input placeholder="Add securely via verified payment gateway" disabled></div>
+      <p class="security-note" style="margin-top:12px"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg> Cards are added through a PCI-DSS compliant gateway via tokenization. Card details are <strong style="color:var(--white)">never stored</strong> on this site.</p>
+    </div>
+
+    <!-- STEP 5 — Transfer -->
+    <div class="step-card rv" style="transition-delay:.3s">
+      <div class="sc-head">
+        <span class="sc-num">5</span>
+        <h3>Make Your Transfer</h3>
+      </div>
+      <div class="arow">
+        <div class="afield">
+          <label>Transfer Type</label>
+          <select disabled>
+            <option>Credit card → Credit card</option>
+            <option>Credit card → Bank account</option>
+          </select>
+        </div>
+        <div class="afield"><label>Amount (₹)</label><input placeholder="Enter amount" disabled></div>
+      </div>
+      <button class="btn-primary-disabled" disabled>Proceed (Coming Soon)</button>
+    </div>
+
+    <!-- WA FALLBACK -->
+    <div class="wa-cta rv" style="transition-delay:.35s">
+      <p>Need a transfer right now? Our team handles it for you — safely and instantly.</p>
+      <a href="https://wa.me/919911312139" class="btn-wa" target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.7 1.9 6.7L3 29l7-1.8c1.9 1 4 1.6 6 1.6 7 0 12.5-5.5 12.5-12.5S23 3 16 3z"/></svg>
+        Need a Transfer Now? WhatsApp Us
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand"><a href="index.html" class="brand" style="margin-bottom:10px"><div class="brand-icon" style="animation:none">C</div><span>Cred<b>PayZ</b></span></a><p>Credit card payments, transfers, and instant money — handled safely so you stay free and tension-free. POS machine swipe & home service available.</p><p style="font-size:.72rem;color:#EF4444;margin-top:10px;font-weight:600">⚠️ Non-Utility · Non-Education Portal</p></div>
+      <div><h4>Company</h4><a href="index.html">Home</a><a href="about.html">About</a><a href="features.html">Features</a><a href="index.html#pricing">Pricing</a><a href="contact.html">Contact</a></div>
+      <div><h4>Reach Us</h4>
+        <div class="cline"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a11 11 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg><a href="https://wa.me/919911312139" target="_blank" rel="noopener">9911312139 · Call / WhatsApp · 24/7</a></div>
+        <div class="cline"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.4 7-11a7 7 0 10-14 0c0 5.6 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><a href="https://maps.google.com/?q=Ansal+Tanushree+Mahagunpuram+Mehrauli+NH24+Ghaziabad" target="_blank" rel="noopener" style="color:var(--gold)">📍 Ansal Tanushree, Mehrauli, NH24, Ghaziabad</a><a href="https://maps.google.com/?q=Esquire+Market+Ruchira+Sapphire+Jaipuria+Sunrise+Greens+NH24+Ghaziabad" target="_blank" rel="noopener" style="color:var(--gold);margin-top:7px">📍 Shop UG15, Esquire Market, Jaipuria Sunrise Greens, NH24, Ghaziabad</a></div></div>
+      </div>
+    </div>
+    <div class="fbot"><span>© 2026 CredPayZ. All rights reserved.</span><span>Safe transactions · Fast process · Reliable service</span></div>
+  </div>
+</footer>
+<a href="https://wa.me/919911312139" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.7 1.9 6.7L3 29l7-1.8c1.9 1 4 1.6 6 1.6 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm0 22.8c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-4.1 1.1 1.1-4-.3-.4c-1-1.6-1.6-3.5-1.6-5.5C5.5 9.8 10.2 5.2 16 5.2S26.5 9.8 26.5 15.5 21.8 25.8 16 25.8zm6-7.7c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6s-.7-1.7-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.1 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg></a>
+<script>
+const cg=document.getElementById('cg');
+document.addEventListener('mousemove',e=>{cg.style.left=e.clientX+'px';cg.style.top=e.clientY+'px'});
+document.getElementById('nav').addEventListener('scroll',()=>{});
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>40));
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const d=parseFloat(e.target.style.transitionDelay||'0')*1000;setTimeout(()=>e.target.classList.add('in'),d)}})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
