@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CredPayZ — Credit Card to Bank Transfer | Instant Money Ghaziabad</title>
-<meta name="description" content="CredPayZ — Turn your credit card limit into cash, pay credit card bills on time, card to card transfers. Safe, fast, 24/7. Serving Ghaziabad, Noida, Delhi NCR. Call 9911312139.">
-<meta name="keywords" content="credit card to bank transfer Ghaziabad, credit card to cash Ghaziabad, credit card to credit card payment Ghaziabad, credit card bill payment Ghaziabad, credit card se paise kaise nikale, credit card se cash kaise nikale, instant money from credit card, credit card limit to cash, credit card swipe POS Ghaziabad, home service credit card payment, CredPayZ, CredPayZ Ghaziabad">
+<title>CredPayZ — Credit Card to Bank Transfer & Bill Payment | Ghaziabad NCR</title>
+<meta name="description" content="CredPayZ — We pay your credit card bills, turn your card limit into cash, and do card-to-card transfers. No minimum payment traps. Safe, fast, 24/7. Ghaziabad, Noida, Delhi NCR. Call 9911312139.">
+<meta name="keywords" content="credit card bill payment Ghaziabad, credit card to bank transfer Ghaziabad, credit card to cash Ghaziabad, credit card to credit card payment Ghaziabad, pay my credit card bill, credit card se paise kaise nikale, credit card se cash kaise nikale, instant money from credit card, credit card limit to cash, credit card swipe POS Ghaziabad, home service credit card payment, CredPayZ, CredPayZ Ghaziabad">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <meta name="author" content="CredPayZ">
 <meta name="google-site-verification" content="Iqjz56xpflcFmqf6qWwyQDgr4alzAd6aOWksO4uBt1Y">
@@ -386,6 +386,23 @@ h1 .grad{
 
 /* ─── TRUST BANNER ─── */
 .trust-banner-section{padding:0 0 0;margin-top:-30px;position:relative;z-index:5}
+/* ─── BILL HIGHLIGHT ─── */
+.bill-highlight-section{padding:48px 0 0}
+.bill-highlight{position:relative;overflow:hidden;display:flex;gap:28px;align-items:flex-start;background:linear-gradient(135deg,#7c3aed,#6d28d9);border-radius:24px;padding:40px;box-shadow:0 30px 70px rgba(124,58,237,.3)}
+.bh-glow{position:absolute;top:-50%;right:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(224,134,0,.35),transparent 70%);pointer-events:none}
+.bh-icon{flex-shrink:0;width:72px;height:72px;border-radius:18px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;position:relative;z-index:2}
+.bh-icon svg{width:36px;height:36px;color:#fff;stroke-linecap:round;stroke-linejoin:round}
+.bh-body{position:relative;z-index:2}
+.bh-tag{display:inline-block;background:var(--gold);color:#fff;font-size:.72rem;font-weight:700;padding:5px 14px;border-radius:100px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
+.bh-body h2{font-family:var(--font-hd);font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;color:#fff;line-height:1.15;margin-bottom:14px;letter-spacing:-.02em}
+.bh-body>p{color:rgba(255,255,255,.92);font-size:1rem;line-height:1.7;margin-bottom:20px;max-width:760px}
+.bh-body p strong{color:#fff;font-weight:700;background:rgba(224,134,0,.35);padding:1px 6px;border-radius:4px}
+.bh-points{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:26px}
+.bh-points span{display:flex;align-items:center;gap:8px;color:#fff;font-size:.9rem;font-weight:600}
+.bh-points svg{width:18px;height:18px;fill:none;stroke:#34d399;stroke-width:3;flex-shrink:0}
+.bh-cta{display:inline-block;background:#fff;color:var(--p600);font-weight:700;font-size:1rem;padding:15px 30px;border-radius:12px;transition:all .3s}
+.bh-cta:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(0,0,0,.25);background:var(--gold);color:#fff}
+@media(max-width:760px){.bill-highlight{flex-direction:column;gap:18px;padding:28px}.bh-points{gap:12px}}
 .trust-banner{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;background:var(--card);border:1px solid var(--border2);border-radius:18px;padding:24px;box-shadow:0 20px 60px rgba(124,58,237,.1)}
 .tb-item{display:flex;align-items:center;gap:14px}
 .tb-icon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -731,6 +748,10 @@ footer a:hover{color:var(--p300)}
 .fc-line a,.fc-line span{font-size:.79rem;color:var(--gray2);line-height:1.5}
 .fc-line a:hover{color:var(--gold2)}
 .fbot{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.fsocial{display:flex;gap:10px;margin-top:16px}
+.fsocial a{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--border2);color:var(--p500);transition:all .25s}
+.fsocial a:hover{background:linear-gradient(135deg,var(--p500),var(--p600));color:#fff;transform:translateY(-2px);box-shadow:0 8px 20px rgba(124,58,237,.3)}
+.fsocial svg{width:19px;height:19px}
 .fbot span{font-size:.74rem;color:var(--gray3)}
 
 /* ─── WA FLOAT ─── */
@@ -979,6 +1000,29 @@ footer a:hover{color:var(--p300)}
   </div>
 </section>
 
+<!-- ═══ BILL PAYMENT HIGHLIGHT (key selling point) ═══ -->
+<section class="bill-highlight-section">
+  <div class="wrap">
+    <div class="bill-highlight g-fade">
+      <div class="bh-glow"></div>
+      <div class="bh-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>
+      </div>
+      <div class="bh-body">
+        <div class="bh-tag">Most Popular Service</div>
+        <h2>Don't have money to pay your credit card bill?</h2>
+        <p>Never pay just the <strong>minimum amount</strong> again — that's how banks trap you with huge interest. <strong>We pay your full credit card bill for you</strong>, on time, before the due date. No late fees, no penalties, no interest pile-up. You stay tension-free and your credit score stays clean.</p>
+        <div class="bh-points">
+          <span><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Full bill paid on time</span>
+          <span><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Avoid heavy interest charges</span>
+          <span><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Protect your credit score</span>
+        </div>
+        <a href="https://wa.me/919911312139?text=Hi%20CredPayZ%2C%20I%20need%20help%20paying%20my%20credit%20card%20bill" class="bh-cta" target="_blank" rel="noopener">Pay My Card Bill Now — WhatsApp Us →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- TICKER -->
 <div class="ticker">
   <div class="ticker-track">
@@ -1041,30 +1085,71 @@ footer a:hover{color:var(--p300)}
       <div class="sc wide g-fade" style="transition-delay:.12s">
         <div class="sc-wide-inner">
           <div class="sc-visual">
-            <!-- Professional POS SVG -->
-            <svg viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
-              <rect x="30" y="10" width="100" height="100" rx="14" fill="rgba(30,0,48,0.8)" stroke="rgba(167,139,250,0.25)" stroke-width="1.5"/>
-              <rect x="40" y="20" width="80" height="45" rx="8" fill="rgba(167,139,250,0.05)" stroke="rgba(167,139,250,0.18)" stroke-width="1"/>
-              <text x="80" y="43" font-family="Space Mono,monospace" font-size="8" fill="rgba(167,139,250,0.7)" text-anchor="middle">CREDPAYZ</text>
-              <text x="80" y="56" font-family="Space Mono,monospace" font-size="6.5" fill="rgba(16,185,129,0.8)" text-anchor="middle">● READY</text>
-              <g transform="translate(40,73)">
-                <rect width="11" height="9" rx="2.5" fill="rgba(167,139,250,0.25)"/>
-                <rect x="14.5" width="11" height="9" rx="2.5" fill="rgba(167,139,250,0.25)"/>
-                <rect x="29" width="11" height="9" rx="2.5" fill="rgba(167,139,250,0.25)"/>
-                <rect x="43.5" width="11" height="9" rx="2.5" fill="rgba(167,139,250,0.25)"/>
-                <rect y="13" width="11" height="9" rx="2.5" fill="rgba(167,139,250,0.2)"/>
-                <rect x="14.5" y="13" width="11" height="9" rx="2.5" fill="rgba(167,139,250,0.2)"/>
-                <rect x="29" y="13" width="11" height="9" rx="2.5" fill="rgba(167,139,250,0.2)"/>
-                <rect x="43.5" y="13" width="11" height="9" rx="2.5" fill="rgba(167,139,250,0.2)"/>
-                <rect y="26" width="25" height="9" rx="2.5" fill="rgba(245,158,11,0.3)"/>
-                <rect x="29" y="26" width="11" height="9" rx="2.5" fill="rgba(16,185,129,0.3)"/>
-                <rect x="43.5" y="26" width="11" height="9" rx="2.5" fill="rgba(239,68,68,0.3)"/>
+            <!-- Professional POS terminal animation -->
+            <svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%" class="pos-svg">
+              <defs>
+                <linearGradient id="posBody" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#ffffff"/>
+                  <stop offset="1" stop-color="#f1ecff"/>
+                </linearGradient>
+                <linearGradient id="posScreen" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#7c3aed"/>
+                  <stop offset="1" stop-color="#6d28d9"/>
+                </linearGradient>
+                <linearGradient id="swipeCard" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#e08600"/>
+                  <stop offset="1" stop-color="#f59e0b"/>
+                </linearGradient>
+                <filter id="posShadow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#7c3aed" flood-opacity="0.18"/>
+                </filter>
+              </defs>
+
+              <!-- Terminal body -->
+              <rect x="48" y="34" width="104" height="124" rx="16" fill="url(#posBody)" stroke="rgba(124,58,237,0.18)" stroke-width="1.5" filter="url(#posShadow)"/>
+
+              <!-- Screen -->
+              <rect x="60" y="46" width="80" height="46" rx="8" fill="url(#posScreen)"/>
+              <text x="100" y="66" font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="0.5">CredPayZ</text>
+              <circle cx="84" cy="78" r="2.5" fill="#34d399"><animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/></circle>
+              <text x="106" y="81" font-family="Space Mono,monospace" font-size="6.5" fill="#a7f3d0" text-anchor="middle">READY</text>
+
+              <!-- Keypad -->
+              <g fill="#ede9fe" stroke="rgba(124,58,237,0.12)" stroke-width="0.8">
+                <rect x="62" y="104" width="20" height="13" rx="3.5"/>
+                <rect x="90" y="104" width="20" height="13" rx="3.5"/>
+                <rect x="118" y="104" width="20" height="13" rx="3.5"/>
+                <rect x="62" y="121" width="20" height="13" rx="3.5"/>
+                <rect x="90" y="121" width="20" height="13" rx="3.5"/>
+                <rect x="118" y="121" width="20" height="13" rx="3.5"/>
               </g>
-              <!-- animated swipe card -->
-              <rect height="30" width="65" rx="5" fill="rgba(245,158,11,0.6)" stroke="rgba(251,191,36,0.4)" stroke-width="1">
-                <animateMotion dur="3s" repeatCount="indefinite" path="M -65,15 L 180,15"/>
-                <animate attributeName="opacity" values="0;0.9;0.9;0" dur="3s" repeatCount="indefinite"/>
-              </rect>
+              <!-- action keys -->
+              <rect x="62" y="138" width="20" height="13" rx="3.5" fill="rgba(220,38,38,0.15)" stroke="rgba(220,38,38,0.3)" stroke-width="0.8"/>
+              <rect x="90" y="138" width="20" height="13" rx="3.5" fill="rgba(245,158,11,0.18)" stroke="rgba(245,158,11,0.35)" stroke-width="0.8"/>
+              <rect x="118" y="138" width="20" height="13" rx="3.5" fill="rgba(5,150,105,0.18)" stroke="rgba(5,150,105,0.35)" stroke-width="0.8"/>
+
+              <!-- Card slot (top) -->
+              <rect x="60" y="38" width="80" height="3" rx="1.5" fill="rgba(124,58,237,0.2)"/>
+
+              <!-- Animated swipe card -->
+              <g>
+                <rect x="0" y="20" width="56" height="36" rx="5" fill="url(#swipeCard)" stroke="rgba(255,255,255,0.4)" stroke-width="1">
+                  <animateMotion dur="3.5s" repeatCount="indefinite" keyPoints="0;0.5;0.5;1" keyTimes="0;0.35;0.55;1" calcMode="spline" keySplines="0.4 0 0.2 1;0 0 1 1;0.4 0 0.2 1" path="M 30,-50 L 30,30 L 30,30 L 170,30"/>
+                </rect>
+                <rect x="6" y="28" width="12" height="9" rx="2" fill="rgba(255,255,255,0.85)">
+                  <animateMotion dur="3.5s" repeatCount="indefinite" keyPoints="0;0.5;0.5;1" keyTimes="0;0.35;0.55;1" calcMode="spline" keySplines="0.4 0 0.2 1;0 0 1 1;0.4 0 0.2 1" path="M 30,-50 L 30,30 L 30,30 L 170,30"/>
+                </rect>
+                <text x="28" y="51" font-family="Space Mono,monospace" font-size="6" fill="rgba(255,255,255,0.9)" text-anchor="middle">VISA
+                  <animateMotion dur="3.5s" repeatCount="indefinite" keyPoints="0;0.5;0.5;1" keyTimes="0;0.35;0.55;1" calcMode="spline" keySplines="0.4 0 0.2 1;0 0 1 1;0.4 0 0.2 1" path="M 30,-50 L 30,30 L 30,30 L 170,30"/>
+                </text>
+              </g>
+
+              <!-- Success check that pulses after swipe -->
+              <g opacity="0">
+                <animate attributeName="opacity" values="0;0;1;1;0" dur="3.5s" keyTimes="0;0.55;0.7;0.9;1" repeatCount="indefinite"/>
+                <circle cx="100" cy="69" r="14" fill="#059669"/>
+                <path d="M93 69l5 5 9-10" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
             </svg>
           </div>
           <div>
@@ -1447,6 +1532,17 @@ footer a:hover{color:var(--p300)}
         <a href="#home" class="brand" style="margin-bottom:12px"><div class="brand-mark" style="animation:none"><img src="assets/icon-80.png" alt="CredPayZ logo" width="40" height="40"></div><span class="brand-name">Cred<b>PayZ</b></span></a>
         <p>Credit card payments, transfers, and instant money — handled safely so you stay free and tension-free. POS machine swipe & home service available across Ghaziabad, Noida, Delhi NCR.</p>
         <p style="font-size:.71rem;color:#f87171;margin-top:10px;font-weight:600">⚠️ Non-Utility · Non-Education Portal</p>
+        <div class="fsocial">
+          <a href="https://www.instagram.com/cred.payz?igsh=ZmlmM2NobnduNXBi&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/19E8nmQ9a4/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/></svg>
+          </a>
+          <a href="https://wa.me/919911312139" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.7 1.9 6.7L3 29l7-1.8c1.9 1 4 1.6 6 1.6 7 0 12.5-5.5 12.5-12.5S23 3 16 3z" transform="scale(0.75)"/></svg>
+          </a>
+        </div>
       </div>
       <div>
         <h5>Company</h5>
