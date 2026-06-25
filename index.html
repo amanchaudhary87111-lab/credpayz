@@ -209,7 +209,7 @@ section{position:relative;z-index:2}
 .btn-line:hover{border-color:var(--p500);color:var(--white);background:rgba(167,139,250,.06)}
 
 /* ─── SECTION COMMONS ─── */
-.blk{padding:120px 0}
+.blk{padding:72px 0}
 .label{
   display:inline-flex;align-items:center;gap:8px;
   font-family:var(--font-mono);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;
@@ -228,7 +228,7 @@ h2.title em{
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
 .desc{font-size:.97rem;color:var(--gray2);line-height:1.75;max-width:560px}
-.head{margin-bottom:64px}
+.head{margin-bottom:44px}
 
 /* ─── GSAP REVEAL CLASSES ─── */
 .g-fade{opacity:0;transform:translateY(50px)}
@@ -239,10 +239,10 @@ h2.title em{
 
 /* ─── HERO ─── */
 .hero{
-  min-height:100vh;display:flex;align-items:center;
-  padding:120px 0 80px;overflow:hidden;position:relative;
+  min-height:auto;display:flex;align-items:center;
+  padding:48px 0 40px;overflow:hidden;position:relative;
 }
-.hero-wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.hero-wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .hero-tag{
   display:inline-flex;align-items:center;gap:8px;
   font-family:var(--font-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
@@ -286,10 +286,10 @@ h1 .grad{
 
 /* ─── HERO VISUAL — 3D CARD STACK ─── */
 .hero-visual{position:relative;perspective:1000px}
-.scene{position:relative;width:420px;height:520px;margin:0 auto;transform-style:preserve-3d}
+.scene{position:relative;width:380px;height:400px;margin:0 auto;transform-style:preserve-3d}
 
 .hcard{
-  position:absolute;width:340px;height:200px;border-radius:20px;padding:24px;
+  position:absolute;width:320px;height:188px;border-radius:18px;padding:22px;
   display:flex;flex-direction:column;justify-content:space-between;
   transform-style:preserve-3d;
   transition:transform .6s var(--ease),box-shadow .6s var(--ease);
@@ -297,41 +297,41 @@ h1 .grad{
   will-change:transform;
 }
 .hcard .shine{
-  position:absolute;inset:0;border-radius:20px;pointer-events:none;
+  position:absolute;inset:0;border-radius:18px;pointer-events:none;
   background:linear-gradient(135deg,rgba(255,255,255,.12) 0%,rgba(255,255,255,0) 60%);
 }
 .hcard .edge{
-  position:absolute;inset:0;border-radius:20px;pointer-events:none;
+  position:absolute;inset:0;border-radius:18px;pointer-events:none;
   border:1px solid rgba(255,255,255,.15);
 }
 /* individual card styles */
 .hcard.c1{
   background:linear-gradient(135deg,#3b0764 0%,#4c1d95 45%,#5b21b6 100%);
-  top:0;left:0;
+  top:0;left:30px;
   transform:rotate(-4deg) translateZ(0px);
-  box-shadow:0 40px 80px rgba(124,58,237,.16),0 0 60px rgba(124,58,237,.3);
+  box-shadow:0 30px 60px rgba(124,58,237,.16),0 0 50px rgba(124,58,237,.25);
   animation:hc1 8s ease-in-out infinite;
 }
 .hcard.c2{
   background:linear-gradient(135deg,#1e1b4b 0%,#1e40af 45%,#1d4ed8 100%);
-  top:80px;left:60px;
+  top:62px;left:50px;
   transform:rotate(2deg) translateZ(20px);
-  box-shadow:0 40px 80px rgba(124,58,237,.13),0 0 40px rgba(29,78,216,.25);
+  box-shadow:0 30px 60px rgba(124,58,237,.13),0 0 36px rgba(29,78,216,.22);
   animation:hc2 8s ease-in-out infinite;
 }
 .hcard.c3{
   background:linear-gradient(135deg,#451a03 0%,#92400e 45%,#b45309 100%);
-  top:165px;left:20px;
+  top:124px;left:15px;
   transform:rotate(-1deg) translateZ(40px);
-  box-shadow:0 40px 80px rgba(124,58,237,.13),0 0 40px rgba(180,83,9,.25);
+  box-shadow:0 30px 60px rgba(124,58,237,.13),0 0 36px rgba(180,83,9,.22);
   animation:hc3 8s ease-in-out infinite;
 }
-@keyframes hc1{0%,100%{transform:rotate(-4deg) translateZ(0) translateY(0)}33%{transform:rotate(-3deg) translateZ(0) translateY(-12px)}66%{transform:rotate(-5deg) translateZ(0) translateY(-6px)}}
-@keyframes hc2{0%,100%{transform:rotate(2deg) translateZ(20px) translateY(0)}33%{transform:rotate(3deg) translateZ(20px) translateY(-9px)}66%{transform:rotate(1.5deg) translateZ(20px) translateY(-4px)}}
-@keyframes hc3{0%,100%{transform:rotate(-1deg) translateZ(40px) translateY(0)}33%{transform:rotate(0deg) translateZ(40px) translateY(-10px)}66%{transform:rotate(-2deg) translateZ(40px) translateY(-5px)}}
+@keyframes hc1{0%,100%{transform:rotate(-4deg) translateZ(0) translateY(0)}33%{transform:rotate(-3deg) translateZ(0) translateY(-10px)}66%{transform:rotate(-5deg) translateZ(0) translateY(-5px)}}
+@keyframes hc2{0%,100%{transform:rotate(2deg) translateZ(20px) translateY(0)}33%{transform:rotate(3deg) translateZ(20px) translateY(-8px)}66%{transform:rotate(1.5deg) translateZ(20px) translateY(-3px)}}
+@keyframes hc3{0%,100%{transform:rotate(-1deg) translateZ(40px) translateY(0)}33%{transform:rotate(0deg) translateZ(40px) translateY(-9px)}66%{transform:rotate(-2deg) translateZ(40px) translateY(-4px)}}
 .hcard:hover{
-  transform:rotate(0deg) translateZ(60px) translateY(-20px) !important;
-  box-shadow:0 60px 100px rgba(0,0,0,.8),0 0 80px rgba(167,139,250,.3) !important;
+  transform:rotate(0deg) translateZ(60px) translateY(-16px) !important;
+  box-shadow:0 50px 90px rgba(124,58,237,.3),0 0 70px rgba(167,139,250,.25) !important;
   animation:none !important;
 }
 .card-chip{width:36px;height:28px;border-radius:6px;background:linear-gradient(135deg,#fbbf24,#f59e0b,#d97706);position:relative}
@@ -675,7 +675,7 @@ h1 .grad{
 .rating-row{display:inline-flex;align-items:center;gap:10px;background:var(--bg2);border:1px solid var(--border);border-radius:999px;padding:10px 20px;margin-top:14px}
 
 /* ─── CONTACT ─── */
-.contact-section{background:var(--bg1);padding:120px 0}
+.contact-section{background:var(--bg1);padding:72px 0}
 .contact-grid{display:grid;grid-template-columns:1fr 480px;gap:80px;align-items:start}
 .contact-h{font-family:var(--font-hd);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:700;letter-spacing:-.04em;color:var(--white);line-height:1.05;margin-bottom:20px}
 .contact-h .cg{background:linear-gradient(90deg,var(--gold2),var(--p400));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
