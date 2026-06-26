@@ -86,7 +86,7 @@ body::before{
 #bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
 
 /* ─── CURSOR ─── */
-.cursor{position:fixed;pointer-events:none;z-index:9999;mix-blend-mode:exclusion}
+.cursor,.cursor-dot,.cursor-ring{display:none !important}
 .cursor-dot{width:8px;height:8px;background:var(--p400);border-radius:50%;transform:translate(-50%,-50%)}
 .cursor-ring{width:36px;height:36px;border:1.5px solid rgba(167,139,250,0.6);border-radius:50%;transform:translate(-50%,-50%);transition:width .3s var(--ease),height .3s var(--ease),border-color .3s}
 .cursor-ring.hovered{width:60px;height:60px;border-color:rgba(167,139,250,0.9)}
@@ -209,7 +209,7 @@ section{position:relative;z-index:2}
 .btn-line:hover{border-color:var(--p500);color:var(--white);background:rgba(167,139,250,.06)}
 
 /* ─── SECTION COMMONS ─── */
-.blk{padding:72px 0}
+.blk{padding:44px 0}
 .label{
   display:inline-flex;align-items:center;gap:8px;
   font-family:var(--font-mono);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;
@@ -228,7 +228,7 @@ h2.title em{
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
 .desc{font-size:.97rem;color:var(--gray2);line-height:1.75;max-width:560px}
-.head{margin-bottom:44px}
+.head{margin-bottom:32px}
 
 /* ─── GSAP REVEAL CLASSES ─── */
 .g-fade{opacity:0;transform:translateY(50px)}
@@ -306,26 +306,29 @@ h1 .grad{
 }
 /* individual card styles */
 .hcard.c1{
-  background:linear-gradient(135deg,#3b0764 0%,#4c1d95 45%,#5b21b6 100%);
+  background:linear-gradient(135deg,#5b21b6 0%,#6d28d9 50%,#7c3aed 100%);
   top:0;left:30px;
   transform:rotate(-4deg) translateZ(0px);
   box-shadow:0 30px 60px rgba(124,58,237,.16),0 0 50px rgba(124,58,237,.25);
   animation:hc1 8s ease-in-out infinite;
 }
+.hcard.c1::before{content:'';position:absolute;inset:0;border-radius:18px;background:radial-gradient(circle at 80% 20%,rgba(255,255,255,.12),transparent 50%);pointer-events:none}
 .hcard.c2{
-  background:linear-gradient(135deg,#1e1b4b 0%,#1e40af 45%,#1d4ed8 100%);
+  background:linear-gradient(135deg,#1e3a8a 0%,#1e40af 50%,#2563eb 100%);
   top:62px;left:50px;
   transform:rotate(2deg) translateZ(20px);
   box-shadow:0 30px 60px rgba(124,58,237,.13),0 0 36px rgba(29,78,216,.22);
   animation:hc2 8s ease-in-out infinite;
 }
+.hcard.c2::before{content:'';position:absolute;inset:0;border-radius:18px;background:radial-gradient(circle at 80% 20%,rgba(255,255,255,.12),transparent 50%);pointer-events:none}
 .hcard.c3{
-  background:linear-gradient(135deg,#451a03 0%,#92400e 45%,#b45309 100%);
+  background:linear-gradient(135deg,#9a3412 0%,#c2410c 50%,#ea580c 100%);
   top:124px;left:15px;
   transform:rotate(-1deg) translateZ(40px);
-  box-shadow:0 30px 60px rgba(124,58,237,.13),0 0 36px rgba(180,83,9,.22);
+  box-shadow:0 30px 60px rgba(124,58,237,.13),0 0 36px rgba(234,88,12,.22);
   animation:hc3 8s ease-in-out infinite;
 }
+.hcard.c3::before{content:'';position:absolute;inset:0;border-radius:18px;background:radial-gradient(circle at 80% 20%,rgba(255,255,255,.14),transparent 50%);pointer-events:none}
 @keyframes hc1{0%,100%{transform:rotate(-4deg) translateZ(0) translateY(0)}33%{transform:rotate(-3deg) translateZ(0) translateY(-10px)}66%{transform:rotate(-5deg) translateZ(0) translateY(-5px)}}
 @keyframes hc2{0%,100%{transform:rotate(2deg) translateZ(20px) translateY(0)}33%{transform:rotate(3deg) translateZ(20px) translateY(-8px)}66%{transform:rotate(1.5deg) translateZ(20px) translateY(-3px)}}
 @keyframes hc3{0%,100%{transform:rotate(-1deg) translateZ(40px) translateY(0)}33%{transform:rotate(0deg) translateZ(40px) translateY(-9px)}66%{transform:rotate(-2deg) translateZ(40px) translateY(-4px)}}
@@ -334,19 +337,25 @@ h1 .grad{
   box-shadow:0 50px 90px rgba(124,58,237,.3),0 0 70px rgba(167,139,250,.25) !important;
   animation:none !important;
 }
-.card-chip{width:36px;height:28px;border-radius:6px;background:linear-gradient(135deg,#fbbf24,#f59e0b,#d97706);position:relative}
-.card-chip::after{content:'';position:absolute;top:35%;left:0;right:0;height:1px;background:rgba(0,0,0,.25)}
-.card-chip::before{content:'';position:absolute;left:35%;top:0;bottom:0;width:1px;background:rgba(0,0,0,.2)}
-.card-num{font-family:var(--font-mono);font-size:.82rem;letter-spacing:.2em;color:rgba(255,255,255,.85);text-shadow:0 1px 4px rgba(124,58,237,.09)}
-.card-row{display:flex;justify-content:space-between;align-items:flex-end}
-.card-label{font-size:.55rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.1em;margin-bottom:2px}
-.card-val{font-size:.78rem;color:rgba(255,255,255,.85);font-weight:500}
-.card-network{font-size:.9rem;font-weight:800;letter-spacing:.03em}
-.visa-text{color:#60a5fa;font-style:italic}
-.mc-text{font-size:1.2rem;line-height:1}
-.mc-r{color:#ef4444;opacity:.9}
-.mc-y{color:#fbbf24;opacity:.9;margin-left:-6px}
-.rupay-text{color:#fbbf24;font-size:.8rem}
+.card-top{display:flex;justify-content:space-between;align-items:center}
+/* Realistic EMV chip */
+.card-chip{width:42px;height:32px;border-radius:6px;background:linear-gradient(135deg,#fde68a 0%,#f59e0b 45%,#d97706 100%);position:relative;box-shadow:inset 0 1px 2px rgba(255,255,255,.4),0 1px 3px rgba(0,0,0,.2);overflow:hidden}
+.card-chip::after{content:'';position:absolute;top:0;left:33%;width:1px;height:100%;background:rgba(0,0,0,.22);box-shadow:11px 0 0 rgba(0,0,0,.22)}
+.card-chip::before{content:'';position:absolute;left:0;top:33%;width:100%;height:1px;background:rgba(0,0,0,.22);box-shadow:0 11px 0 rgba(0,0,0,.22)}
+/* Contactless symbol */
+.contactless{width:22px;height:22px;stroke:rgba(255,255,255,.7);stroke-width:1.6;stroke-linecap:round}
+.card-num{font-family:var(--font-mono);font-size:.95rem;letter-spacing:.16em;color:rgba(255,255,255,.95);text-shadow:0 1px 3px rgba(0,0,0,.25);font-weight:700}
+.card-row{display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+.card-label{font-size:.5rem;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.12em;margin-bottom:3px}
+.card-val{font-size:.78rem;color:rgba(255,255,255,.95);font-weight:600;letter-spacing:.02em}
+.card-network{font-size:1.1rem;font-weight:800;letter-spacing:.02em;margin-left:auto}
+.visa-text{color:#fff;font-style:italic;font-family:var(--font-hd);text-shadow:0 1px 3px rgba(0,0,0,.3)}
+.rupay-text{color:#fff;font-size:.92rem;font-weight:700;font-style:italic}
+/* Realistic MasterCard interlocking circles */
+.mc-logo{display:flex;align-items:center;margin-left:auto}
+.mc-r,.mc-y{width:26px;height:26px;border-radius:50%;display:block}
+.mc-r{background:#eb001b}
+.mc-y{background:#f79e1b;margin-left:-11px;mix-blend-mode:screen;opacity:.92}
 
 /* Floating info badges */
 .fbadge{
@@ -387,7 +396,7 @@ h1 .grad{
 /* ─── TRUST BANNER ─── */
 .trust-banner-section{padding:0 0 0;margin-top:-30px;position:relative;z-index:5}
 /* ─── BILL HIGHLIGHT ─── */
-.bill-highlight-section{padding:48px 0 0}
+.bill-highlight-section{padding:36px 0 0}
 .bill-highlight{position:relative;overflow:hidden;display:flex;gap:28px;align-items:flex-start;background:linear-gradient(135deg,#7c3aed,#6d28d9);border-radius:24px;padding:40px;box-shadow:0 30px 70px rgba(124,58,237,.3)}
 .bh-glow{position:absolute;top:-50%;right:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(224,134,0,.35),transparent 70%);pointer-events:none}
 .bh-icon{flex-shrink:0;width:72px;height:72px;border-radius:18px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;position:relative;z-index:2}
@@ -675,7 +684,7 @@ h1 .grad{
 .rating-row{display:inline-flex;align-items:center;gap:10px;background:var(--bg2);border:1px solid var(--border);border-radius:999px;padding:10px 20px;margin-top:14px}
 
 /* ─── CONTACT ─── */
-.contact-section{background:var(--bg1);padding:72px 0}
+.contact-section{background:var(--bg1);padding:44px 0}
 .contact-grid{display:grid;grid-template-columns:1fr 480px;gap:80px;align-items:start}
 .contact-h{font-family:var(--font-hd);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:700;letter-spacing:-.04em;color:var(--white);line-height:1.05;margin-bottom:20px}
 .contact-h .cg{background:linear-gradient(90deg,var(--gold2),var(--p400));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -737,7 +746,7 @@ h1 .grad{
 .success-msg{display:none;margin-top:14px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.25);border-radius:10px;padding:13px 16px;font-size:.83rem;color:var(--green);text-align:center}
 
 /* ─── FOOTER ─── */
-footer{background:var(--bg0);border-top:1px solid var(--border);padding:64px 0 32px}
+footer{background:var(--bg0);border-top:1px solid var(--border);padding:44px 0 28px}
 .fg{display:grid;grid-template-columns:2fr 1fr 1.5fr;gap:56px;margin-bottom:48px}
 .fb p{font-size:.82rem;color:var(--gray3);line-height:1.7;margin-top:14px;max-width:320px}
 footer h5{font-family:var(--font-mono);font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray3);margin-bottom:18px}
@@ -808,6 +817,40 @@ footer a:hover{color:var(--p300)}
   .amt-grid{grid-template-columns:repeat(2,1fr)}
   .custom-box{flex-direction:column;gap:20px;padding:28px 24px}
 }
+@media(max-width:560px){
+  .wrap{padding:0 16px}.nav .btn-cta{display:none}
+  .hero{padding:32px 0 28px}
+  .hero h1{font-size:2rem;line-height:1.1}
+  .hero-p{font-size:.96rem}
+  .hero-pills{gap:6px}
+  .pill{font-size:.72rem;padding:6px 10px}
+  .hero-nums{gap:0}
+  .hero-nums .num{font-size:1.5rem}
+  .hcard{width:240px;height:150px;padding:18px}
+  .card-num{font-size:.82rem;letter-spacing:.1em}
+  .scene{height:300px}
+  .bill-highlight{padding:24px 20px}
+  .bh-body h2{font-size:1.35rem}
+  .bh-body>p{font-size:.92rem}
+  .bh-cta{width:100%;text-align:center;padding:14px}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .amt-grid{grid-template-columns:repeat(2,1fr)}
+  .calc-box{padding:22px 18px}
+  .section-head h2,.title{font-size:1.7rem !important}
+  .pt-table{font-size:.82rem}
+  .contact-h{font-size:2rem}
+  .btn-primary,.btn-wa,.btn-line{width:100%;text-align:center;justify-content:center}
+  .hero-cta{flex-direction:column;width:100%}
+  .hero-cta a{width:100%;text-align:center;justify-content:center}
+}
+@media(max-width:380px){
+  .hero h1{font-size:1.75rem}
+  .title,.section-head h2{font-size:1.5rem !important}
+  .hcard{width:215px;height:138px;padding:15px}
+  .stat-n,.hero-nums .num{font-size:1.3rem}
+  .bh-body h2{font-size:1.2rem}
+  .tb-title{font-size:.85rem}
+}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
 </head>
@@ -818,9 +861,7 @@ footer a:hover{color:var(--p300)}
 
 <!-- Custom cursor -->
 <div class="cursor" id="cursor">
-  <div class="cursor-dot" id="cdot"></div>
 </div>
-<div class="cursor cursor-ring" id="cring"></div>
 
 <!-- Mobile Menu -->
 <div class="m-menu" id="mm">
@@ -831,7 +872,7 @@ footer a:hover{color:var(--p300)}
   <a href="#pricing" onclick="cM()">Pricing</a>
   <a href="#faq" onclick="cM()">FAQ</a>
   <a href="contact.html" onclick="cM()">Contact</a>
-  <a href="https://wa.me/919911312139" target="_blank" rel="noopener" style="color:var(--p400)" onclick="cM()">WhatsApp</a>
+  <a href="https://wa.me/919711191145" target="_blank" rel="noopener" style="color:var(--p400)" onclick="cM()">WhatsApp</a>
 </div>
 
 <!-- NAV -->
@@ -850,7 +891,7 @@ footer a:hover{color:var(--p300)}
       <a href="contact.html">Contact</a>
     </nav>
     <div class="nav-right">
-      <a href="https://wa.me/919911312139" class="btn-ghost" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://wa.me/919711191145" class="btn-ghost" target="_blank" rel="noopener">WhatsApp</a>
       <a href="#contact" class="btn-cta">Get Instant Money</a>
     </div>
     <button class="burger" id="burger" onclick="oM()">☰</button>
@@ -875,7 +916,7 @@ footer a:hover{color:var(--p300)}
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
           Get Instant Money
         </a>
-        <a href="https://wa.me/919911312139" class="btn-wa" target="_blank" rel="noopener">
+        <a href="https://wa.me/919711191145" class="btn-wa" target="_blank" rel="noopener">
           <svg viewBox="0 0 32 32" width="16" height="16" fill="currentColor"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.7 1.9 6.7L3 29l7-1.8c1.9 1 4 1.6 6 1.6 7 0 12.5-5.5 12.5-12.5S23 3 16 3z"/></svg>
           Chat on WhatsApp
         </a>
@@ -893,40 +934,43 @@ footer a:hover{color:var(--p300)}
         <!-- Card 1 — Purple VISA -->
         <div class="hcard c1" id="hc1">
           <div class="shine"></div><div class="edge"></div>
-          <div style="display:flex;justify-content:space-between;align-items:center">
+          <div class="card-top">
             <div class="card-chip"></div>
-            <span class="card-network visa-text">VISA</span>
+            <svg class="contactless" viewBox="0 0 24 24" fill="none"><path d="M8.5 8a6 6 0 010 8M12 5.5a10 10 0 010 13M5 10.5a3 3 0 010 3"/></svg>
           </div>
-          <div class="card-num">•••• •••• •••• 3456</div>
+          <div class="card-num">4856 •••• •••• 3456</div>
           <div class="card-row">
             <div><div class="card-label">Card Holder</div><div class="card-val">RAHUL SHARMA</div></div>
-            <div><div class="card-label">Expires</div><div class="card-val">12/27</div></div>
+            <div><div class="card-label">Valid Thru</div><div class="card-val">12/27</div></div>
+            <span class="card-network visa-text">VISA</span>
           </div>
         </div>
         <!-- Card 2 — Blue Mastercard -->
         <div class="hcard c2" id="hc2">
           <div class="shine"></div><div class="edge"></div>
-          <div style="display:flex;justify-content:space-between;align-items:center">
+          <div class="card-top">
             <div class="card-chip"></div>
-            <div class="card-network"><span class="mc-r">●</span><span class="mc-y">●</span></div>
+            <svg class="contactless" viewBox="0 0 24 24" fill="none"><path d="M8.5 8a6 6 0 010 8M12 5.5a10 10 0 010 13M5 10.5a3 3 0 010 3"/></svg>
           </div>
-          <div class="card-num">•••• •••• •••• 8921</div>
+          <div class="card-num">5267 •••• •••• 8921</div>
           <div class="card-row">
             <div><div class="card-label">Card Holder</div><div class="card-val">AMIT KUMAR</div></div>
-            <div><div class="card-label">Expires</div><div class="card-val">09/26</div></div>
+            <div><div class="card-label">Valid Thru</div><div class="card-val">09/26</div></div>
+            <div class="card-network mc-logo"><span class="mc-r"></span><span class="mc-y"></span></div>
           </div>
         </div>
         <!-- Card 3 — Gold RuPay -->
         <div class="hcard c3" id="hc3">
           <div class="shine"></div><div class="edge"></div>
-          <div style="display:flex;justify-content:space-between;align-items:center">
+          <div class="card-top">
             <div class="card-chip"></div>
-            <span class="card-network rupay-text">RuPay</span>
+            <svg class="contactless" viewBox="0 0 24 24" fill="none"><path d="M8.5 8a6 6 0 010 8M12 5.5a10 10 0 010 13M5 10.5a3 3 0 010 3"/></svg>
           </div>
-          <div class="card-num">•••• •••• •••• 2244</div>
+          <div class="card-num">6073 •••• •••• 2244</div>
           <div class="card-row">
             <div><div class="card-label">Card Holder</div><div class="card-val">PRIYA SINGH</div></div>
-            <div><div class="card-label">Expires</div><div class="card-val">03/28</div></div>
+            <div><div class="card-label">Valid Thru</div><div class="card-val">03/28</div></div>
+            <span class="card-network rupay-text">RuPay»</span>
           </div>
         </div>
 
@@ -1017,7 +1061,7 @@ footer a:hover{color:var(--p300)}
           <span><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Avoid heavy interest charges</span>
           <span><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Protect your credit score</span>
         </div>
-        <a href="https://wa.me/919911312139?text=Hi%20CredPayZ%2C%20I%20need%20help%20paying%20my%20credit%20card%20bill" class="bh-cta" target="_blank" rel="noopener">Pay My Card Bill Now — WhatsApp Us →</a>
+        <a href="https://wa.me/919711191145?text=Hi%20CredPayZ%2C%20I%20need%20help%20paying%20my%20credit%20card%20bill" class="bh-cta" target="_blank" rel="noopener">Pay My Card Bill Now — WhatsApp Us →</a>
       </div>
     </div>
   </div>
@@ -1322,8 +1366,9 @@ footer a:hover{color:var(--p300)}
         <p style="font-size:.88rem;color:var(--gray2);max-width:480px">For regular users, higher volumes or special cases, we offer customized rates. Let's work out a plan that fits you — over a quick call.</p>
       </div>
       <div style="display:flex;gap:12px;flex-wrap:wrap;flex-shrink:0;position:relative;z-index:2">
-        <a href="https://wa.me/919911312139" class="btn-primary" target="_blank" rel="noopener">Discuss on WhatsApp</a>
+        <a href="https://wa.me/919711191145" class="btn-primary" target="_blank" rel="noopener">Discuss on WhatsApp</a>
         <a href="tel:+919911312139" class="btn-line">Call 9911312139</a>
+        <a href="tel:+919711191145" class="btn-line">Call 9711191145</a>
       </div>
     </div>
   </div>
@@ -1436,7 +1481,7 @@ footer a:hover{color:var(--p300)}
       </div>
     </div>
     <div style="text-align:center;margin-top:32px" class="g-fade">
-      <a href="https://wa.me/919911312139" class="btn-wa" target="_blank" rel="noopener">Still have a question? Ask on WhatsApp</a>
+      <a href="https://wa.me/919711191145" class="btn-wa" target="_blank" rel="noopener">Still have a question? Ask on WhatsApp</a>
     </div>
   </div>
 </section>
@@ -1454,8 +1499,9 @@ footer a:hover{color:var(--p300)}
           9911312139
         </a>
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
-          <a href="https://wa.me/919911312139" class="btn-wa" target="_blank" rel="noopener">Chat on WhatsApp</a>
-          <a href="tel:+919911312139" class="btn-line">Call Now</a>
+          <a href="https://wa.me/919711191145" class="btn-wa" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          <a href="tel:+919911312139" class="btn-line">Call 9911312139</a>
+          <a href="tel:+919711191145" class="btn-line">Call 9711191145</a>
         </div>
         <div class="loc-list">
           <div class="loc-item"><span style="color:var(--gold2);flex-shrink:0;margin-top:2px">📍</span><a href="https://maps.google.com/?q=Ansal+Tanushree+Mahagunpuram+Mehrauli+NH24+Ghaziabad" target="_blank" rel="noopener">Ansal Tanushree, Near Mahagunpuram, Indian Oil CNG Station, Mehrauli, NH24, Ghaziabad</a></div>
@@ -1539,7 +1585,7 @@ footer a:hover{color:var(--p300)}
           <a href="https://www.facebook.com/share/19E8nmQ9a4/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/></svg>
           </a>
-          <a href="https://wa.me/919911312139" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <a href="https://wa.me/919711191145" target="_blank" rel="noopener" aria-label="WhatsApp">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.7 1.9 6.7L3 29l7-1.8c1.9 1 4 1.6 6 1.6 7 0 12.5-5.5 12.5-12.5S23 3 16 3z" transform="scale(0.75)"/></svg>
           </a>
         </div>
@@ -1567,7 +1613,7 @@ footer a:hover{color:var(--p300)}
   </div>
 </footer>
 
-<a href="https://wa.me/919911312139" class="wa-fab" target="_blank" rel="noopener" aria-label="WhatsApp">
+<a href="https://wa.me/919711191145" class="wa-fab" target="_blank" rel="noopener" aria-label="WhatsApp">
   <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.7 1.9 6.7L3 29l7-1.8c1.9 1 4 1.6 6 1.6 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm0 22.8c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-4.1 1.1 1.1-4-.3-.4c-1-1.6-1.6-3.5-1.6-5.5C5.5 9.8 10.2 5.2 16 5.2S26.5 9.8 26.5 15.5 21.8 25.8 16 25.8zm6-7.7c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6s-.7-1.7-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.1 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg>
 </a>
 <button class="scroll-top" id="stBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
@@ -1637,24 +1683,6 @@ if(HAS_GSAP){try{gsap.registerPlugin(ScrollTrigger);}catch(e){HAS_GSAP=false;}}
   }
   draw();
 })();
-
-// ═══ CUSTOM CURSOR ═══
-const cdot=document.getElementById('cdot');
-const cring=document.getElementById('cring');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{
-  mx=e.clientX;my=e.clientY;
-  cdot.style.left=mx+'px';cdot.style.top=my+'px';
-});
-(function animCursor(){
-  rx+=(mx-rx)*.12;ry+=(my-ry)*.12;
-  cring.style.left=rx+'px';cring.style.top=ry+'px';
-  requestAnimationFrame(animCursor);
-})();
-document.querySelectorAll('a,button,.sc,.hcard,.wc,.stat,.rc,.step,.amt-card').forEach(el=>{
-  el.addEventListener('mouseenter',()=>cring.classList.add('hovered'));
-  el.addEventListener('mouseleave',()=>cring.classList.remove('hovered'));
-});
 
 // ═══ NAV ═══
 const nav=document.getElementById('nav');
