@@ -69,8 +69,8 @@
   --ease:     cubic-bezier(0.16,1,0.3,1);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:var(--font);background:var(--bg0);color:var(--white);overflow-x:hidden;line-height:1.6;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;font-size:16px;overflow-x:hidden;width:100%;max-width:100%}
+body{font-family:var(--font);background:var(--bg0);color:var(--white);overflow-x:hidden;width:100%;max-width:100%;position:relative;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}
 button{cursor:pointer;border:none;background:none;font-family:inherit}
 img{max-width:100%;display:block}
@@ -286,7 +286,7 @@ h1 .grad{
 
 /* ─── HERO VISUAL — 3D CARD STACK ─── */
 .hero-visual{position:relative;perspective:1000px}
-.scene{position:relative;width:380px;height:400px;margin:0 auto;transform-style:preserve-3d}
+.scene{position:relative;width:380px;height:400px;margin:0 auto;transform-style:preserve-3d;max-width:100%}
 
 .hcard{
   position:absolute;width:320px;height:188px;border-radius:18px;padding:22px;
@@ -830,6 +830,8 @@ footer a:hover{color:var(--p300)}
 @media(max-width:560px){
   .wrap{padding:0 16px}.nav .btn-cta{display:none}
   .hero{padding:48px 0 28px}
+  .fbadge{display:none !important}
+  .scene{width:100%;max-width:320px}
   .hero h1{font-size:2rem;line-height:1.1}
   .hero-p{font-size:.96rem}
   .hero-pills{gap:6px}
