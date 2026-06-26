@@ -169,7 +169,7 @@ section{position:relative;z-index:2}
 }
 .btn-cta:hover{transform:translateY(-1px);box-shadow:0 8px 28px rgba(245,158,11,.45)}
 .btn-cta:hover::before{opacity:1}
-.burger{display:none;font-size:1.3rem;color:var(--white);padding:6px}
+.burger{display:none;font-size:1.4rem;color:var(--white);padding:6px 4px;margin-left:auto;line-height:1;background:none;border:none;cursor:pointer}
 .m-menu{
   display:none;position:fixed;inset:0;z-index:90;
   background:rgba(247,245,255,0.97);backdrop-filter:blur(24px);
@@ -752,6 +752,7 @@ h1 .grad{
 /* ─── FOOTER ─── */
 footer{background:var(--bg0);border-top:1px solid var(--border);padding:44px 0 28px}
 .fg{display:grid;grid-template-columns:2fr 1fr 1.5fr;gap:56px;margin-bottom:48px}
+.fg-4{grid-template-columns:2fr 1fr 1fr 1.5fr}
 .fb p{font-size:.82rem;color:var(--gray3);line-height:1.7;margin-top:14px;max-width:320px}
 footer h5{font-family:var(--font-mono);font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray3);margin-bottom:18px}
 footer a{display:block;font-size:.84rem;color:var(--gray2);margin-bottom:9px;transition:color .2s}
@@ -804,7 +805,7 @@ footer a:hover{color:var(--p300)}
   .hcard{width:260px;height:155px}
   .why-grid,.stats-grid{grid-template-columns:repeat(2,1fr)}
   .reviews-grid{grid-template-columns:repeat(2,1fr)}
-  .fg{grid-template-columns:1fr 1fr}
+  .fg,.fg-4{grid-template-columns:1fr 1fr}
   .steps-grid{grid-template-columns:1fr;gap:14px}
   .steps-grid::before{display:none}
   .amt-grid{grid-template-columns:repeat(3,1fr)}
@@ -814,13 +815,13 @@ footer a:hover{color:var(--p300)}
   .eq-rotate{grid-template-columns:1fr}
 }
 @media(max-width:768px){
-  .nav-links,.btn-ghost{display:none}.burger{display:block}
+  .nav-links,.btn-ghost,.nav-right{display:none}.burger{display:block}
   .hero h1{font-size:2.4rem}
   .why-grid{grid-template-columns:1fr}
   .stats-grid{grid-template-columns:repeat(2,1fr)}
   .reviews-grid{grid-template-columns:1fr}
   .contact-grid{gap:44px}
-  .fg{grid-template-columns:1fr;gap:36px}
+  .fg,.fg-4{grid-template-columns:1fr;gap:36px}
   .fbot{flex-direction:column;text-align:center}
   .amt-grid{grid-template-columns:repeat(2,1fr)}
   .custom-box{flex-direction:column;gap:20px;padding:28px 24px}
@@ -870,9 +871,6 @@ footer a:hover{color:var(--p300)}
 <canvas id="bg-canvas"></canvas>
 
 <!-- Custom cursor -->
-<div class="cursor" id="cursor">
-</div>
-
 <!-- Mobile Menu -->
 <div class="m-menu" id="mm">
   <span class="m-close" id="mc">✕</span>
@@ -1591,7 +1589,7 @@ footer a:hover{color:var(--p300)}
 
 <footer>
   <div class="wrap">
-    <div class="fg" style="grid-template-columns:2fr 1fr 1fr 1.5fr">
+    <div class="fg fg-4">
       <div class="fb">
         <a href="#home" class="brand" style="margin-bottom:12px"><div class="brand-mark" style="animation:none"><img src="assets/icon-80.png" alt="CredPayZ logo" width="40" height="40"></div><span class="brand-name">Cred<b>PayZ</b></span></a>
         <p>Credit card payments, transfers, and instant money — handled safely so you stay free and tension-free. POS machine swipe & home service available across Ghaziabad, Noida, Delhi NCR.</p>
@@ -1619,6 +1617,7 @@ footer a:hover{color:var(--p300)}
       <div>
         <h5>Reach Us</h5>
         <div class="fc-line"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a11 11 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg><a href="https://wa.me/919911312139" target="_blank" rel="noopener">9911312139 · Call / WhatsApp · 24/7</a></div>
+        <div class="fc-line"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a11 11 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg><a href="https://wa.me/919711191145" target="_blank" rel="noopener">9711191145 · Call / WhatsApp · 24/7</a></div>
         <div class="fc-line"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 5L2 7"/></svg><a href="mailto:amanchaudhary6777@gmail.com">amanchaudhary6777@gmail.com</a></div>
         <div class="fc-line"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.4 7-11a7 7 0 10-14 0c0 5.6 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><a href="https://maps.google.com/?q=Ansal+Tanushree+Mahagunpuram+Mehrauli+NH24+Ghaziabad" target="_blank" rel="noopener" style="color:var(--gold2)">📍 Ansal Tanushree, Mehrauli, NH24, Ghaziabad</a><a href="https://maps.google.com/?q=Esquire+Market+Ruchira+Sapphire+Jaipuria+Sunrise+Greens+NH24+Ghaziabad" target="_blank" rel="noopener" style="color:var(--gold2);margin-top:6px">📍 Shop UG15, Esquire Market, Jaipuria Sunrise Greens, NH24, Ghaziabad</a></div></div>
         <div class="fc-line"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg><span>Open 24/7 — reach out anytime</span></div>
