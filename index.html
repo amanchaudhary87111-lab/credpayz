@@ -685,7 +685,13 @@ h1 .grad{
 
 /* ─── CONTACT ─── */
 .contact-section{background:var(--bg1);padding:44px 0}
-.contact-grid{display:grid;grid-template-columns:1fr 480px;gap:80px;align-items:start}
+.contact-grid{display:grid;grid-template-columns:1fr 480px;gap:56px;align-items:start}
+.addr-strip{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px}
+.addr-item{display:flex;gap:10px;align-items:flex-start;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;font-size:.84rem;color:var(--gray2);line-height:1.5;transition:all .2s}
+.addr-item:hover{border-color:var(--border2);color:var(--white)}
+.addr-item b{color:var(--white);font-family:var(--font-hd)}
+.addr-pin{flex-shrink:0}
+@media(max-width:880px){.addr-strip{grid-template-columns:1fr}}
 .contact-h{font-family:var(--font-hd);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:700;letter-spacing:-.04em;color:var(--white);line-height:1.05;margin-bottom:20px}
 .contact-h .cg{background:linear-gradient(90deg,var(--gold2),var(--p400));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .contact-p{font-size:.95rem;color:var(--gray2);line-height:1.75;margin-bottom:28px}
@@ -788,7 +794,11 @@ footer a:hover{color:var(--p300)}
 
 /* ─── RESPONSIVE ─── */
 @media(max-width:1024px){
-  .hero-wrap,.contact-grid{grid-template-columns:1fr;gap:56px;text-align:center}
+  .hero-wrap,.contact-grid{grid-template-columns:1fr;gap:36px;text-align:center}
+  .contact-grid{display:flex;flex-direction:column}
+  .contact-info{order:2}
+  #apply-form{order:1}
+  .addr-strip{order:3}
   .hero-p,.hero-pills,.hero-cta,.hero-nums{margin-left:auto;margin-right:auto}
   .hero-pills,.hero-cta,.hero-nums{justify-content:center}
   .hero-visual{display:flex;justify-content:center}
@@ -819,7 +829,7 @@ footer a:hover{color:var(--p300)}
 }
 @media(max-width:560px){
   .wrap{padding:0 16px}.nav .btn-cta{display:none}
-  .hero{padding:32px 0 28px}
+  .hero{padding:48px 0 28px}
   .hero h1{font-size:2rem;line-height:1.1}
   .hero-p{font-size:.96rem}
   .hero-pills{gap:6px}
@@ -892,7 +902,7 @@ footer a:hover{color:var(--p300)}
     </nav>
     <div class="nav-right">
       <a href="https://wa.me/919711191145" class="btn-ghost" target="_blank" rel="noopener">WhatsApp</a>
-      <a href="#contact" class="btn-cta">Get Instant Money</a>
+      <a href="#apply-form" class="btn-cta">Get Instant Money</a>
     </div>
     <button class="burger" id="burger" onclick="oM()">☰</button>
   </div>
@@ -912,7 +922,7 @@ footer a:hover{color:var(--p300)}
         <span class="pill warn">⚠️ Non-Utility · Non-Education</span>
       </div>
       <div class="hero-cta g-fade">
-        <a href="#contact" class="btn-primary">
+        <a href="#apply-form" class="btn-primary">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
           Get Instant Money
         </a>
@@ -1293,7 +1303,7 @@ footer a:hover{color:var(--p300)}
             <div class="cr-value" id="calcReceive">₹4,89,250</div>
           </div>
         </div>
-        <a href="#contact" class="calc-cta" id="calcCta">Get ₹4.89L in Your Bank — Enquire Now →</a>
+        <a href="#apply-form" class="calc-cta" id="calcCta">Get ₹4.89L in Your Bank — Enquire Now →</a>
         <p class="calc-note">* Estimate only. Final rate confirmed on WhatsApp. Higher amounts get lower rates.</p>
       </div>
     </div>
@@ -1490,27 +1500,23 @@ footer a:hover{color:var(--p300)}
 <section class="contact-section" id="contact">
   <div class="wrap">
     <div class="contact-grid">
-      <div class="g-left">
+      <div class="g-left contact-info">
         <div class="label">Get Started</div>
         <h2 class="contact-h">No Cash?<br><span class="cg">No Worries.</span></h2>
-        <p class="contact-p">Send your request and our team reaches back within minutes. Sit back, relax, and let us handle everything — safely, quickly, confidentially.</p>
+        <p class="contact-p">Fill the form and our team reaches back within minutes — or call/WhatsApp us directly.</p>
         <a href="https://wa.me/919911312139" class="phone-a" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a11 11 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>
           9911312139
         </a>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
           <a href="https://wa.me/919711191145" class="btn-wa" target="_blank" rel="noopener">Chat on WhatsApp</a>
           <a href="tel:+919911312139" class="btn-line">Call 9911312139</a>
           <a href="tel:+919711191145" class="btn-line">Call 9711191145</a>
         </div>
-        <div class="loc-list">
-          <div class="loc-item"><span style="color:var(--gold2);flex-shrink:0;margin-top:2px">📍</span><a href="https://maps.google.com/?q=Ansal+Tanushree+Mahagunpuram+Mehrauli+NH24+Ghaziabad" target="_blank" rel="noopener">Ansal Tanushree, Near Mahagunpuram, Indian Oil CNG Station, Mehrauli, NH24, Ghaziabad</a></div>
-          <div class="loc-item"><span style="color:var(--gold2);flex-shrink:0;margin-top:2px">📍</span><a href="https://maps.google.com/?q=Esquire+Market+Ruchira+Sapphire+Jaipuria+Sunrise+Greens+NH24+Ghaziabad" target="_blank" rel="noopener">Shop No. UG15, Esquire Market, Ruchira Sapphire, Jaipuria Sunrise Greens, Near Rise Organic Homes, NH24, Ghaziabad</a></div>
-        </div>
       </div>
 
       <!-- FULL ENQUIRY FORM (from original trustpayz.in) -->
-      <div class="form-card g-right">
+      <div class="form-card g-right" id="apply-form">
         <h3>Credit Card Service Enquiry</h3>
         <p class="sub">Help us understand your requirement so we can offer you the best possible pricing.</p>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px">
@@ -1567,6 +1573,18 @@ footer a:hover{color:var(--p300)}
         <button class="btn-submit" id="eq-submit" onclick="submitEnquiry()">Submit Enquiry · Send on WhatsApp →</button>
         <div class="success-msg" id="eq-success">✅ Opening WhatsApp with your details... If it doesn't open, message us directly at 9911312139</div>
       </div>
+    </div>
+
+    <!-- Compact address strip below form -->
+    <div class="addr-strip g-fade">
+      <a href="https://maps.google.com/?q=Ansal+Tanushree+Mahagunpuram+Mehrauli+NH24+Ghaziabad" target="_blank" rel="noopener" class="addr-item">
+        <span class="addr-pin">📍</span>
+        <span><b>Office 1</b> · Ansal Tanushree, Near Mahagunpuram, Indian Oil CNG Station, Mehrauli, NH24, Ghaziabad</span>
+      </a>
+      <a href="https://maps.google.com/?q=Esquire+Market+Ruchira+Sapphire+Jaipuria+Sunrise+Greens+NH24+Ghaziabad" target="_blank" rel="noopener" class="addr-item">
+        <span class="addr-pin">📍</span>
+        <span><b>Office 2</b> · Shop UG15, Esquire Market, Ruchira Sapphire, Jaipuria Sunrise Greens, NH24, Ghaziabad</span>
+      </a>
     </div>
   </div>
 </section>
