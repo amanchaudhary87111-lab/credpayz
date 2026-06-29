@@ -73,13 +73,13 @@
   .cpz-typing span:nth-child(2){animation-delay:.2s}.cpz-typing span:nth-child(3){animation-delay:.4s}
   @keyframes cpzBlink{0%,80%,100%{opacity:.3}40%{opacity:1}}
 
-  .cpz-chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 18px 4px}
-  .cpz-chip{background:#fff;border:1px solid rgba(124,58,237,.25);color:#6d28d9;font-size:12px;font-weight:600;
+  .cpz-chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 18px 4px;width:100%;max-width:100%;box-sizing:border-box}
+  .cpz-chip{max-width:100%;white-space:normal;background:#fff;border:1px solid rgba(124,58,237,.25);color:#6d28d9;font-size:12px;font-weight:600;
     padding:7px 12px;border-radius:20px;cursor:pointer;transition:all .2s;font-family:inherit}
   .cpz-chip:hover{background:#7c3aed;color:#fff;border-color:#7c3aed}
 
-  .cpz-cta{display:flex;gap:8px;padding:8px 18px 0;width:100%;max-width:100%}
-  .cpz-cta a{flex:1 1 0;min-width:0;text-align:center;text-decoration:none;font-size:12.5px;font-weight:700;padding:9px;border-radius:10px;color:#fff;display:flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;overflow:hidden}
+  .cpz-cta{display:flex;flex-wrap:wrap;gap:8px;padding:8px 18px 0;width:100%;max-width:100%}
+  .cpz-cta a{flex:1 1 0;min-width:90px;text-align:center;text-decoration:none;font-size:12.5px;font-weight:700;padding:9px;border-radius:10px;color:#fff;display:flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;overflow:hidden}
   .cpz-cta a svg{width:15px;height:15px}
   .cpz-cta .wa{background:#16a34a}.cpz-cta .call{background:#e08600}.cpz-cta .form{background:#7c3aed}
 
