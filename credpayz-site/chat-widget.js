@@ -48,7 +48,7 @@
   @keyframes cpzPulse{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.6)}50%{box-shadow:0 0 0 6px rgba(34,197,94,0)}}
   .cpz-launch.cpz-hide{transform:scale(0);opacity:0;pointer-events:none}
 
-  .cpz-panel,.cpz-panel *{box-sizing:border-box}
+  .cpz-panel,.cpz-panel *{box-sizing:border-box;max-width:100%}.cpz-panel button,.cpz-panel a,.cpz-panel textarea{margin:0}
   .cpz-panel{position:fixed;left:22px;bottom:22px;z-index:9999;width:370px;max-width:calc(100vw - 28px);height:560px;max-height:calc(100vh - 40px);overflow:hidden;
     background:#fff;border-radius:20px;box-shadow:0 24px 70px rgba(26,16,51,.28);display:flex;flex-direction:column;overflow:hidden;
     font-family:'Inter',system-ui,sans-serif;opacity:0;transform:translateY(20px) scale(.98);pointer-events:none;
@@ -78,13 +78,13 @@
     padding:7px 12px;border-radius:20px;cursor:pointer;transition:all .2s;font-family:inherit}
   .cpz-chip:hover{background:#7c3aed;color:#fff;border-color:#7c3aed}
 
-  .cpz-cta{display:flex;flex-wrap:wrap;gap:8px;padding:8px 18px 0;width:100%;max-width:100%}
-  .cpz-cta a{flex:1 1 0;min-width:90px;text-align:center;text-decoration:none;font-size:12.5px;font-weight:700;padding:9px;border-radius:10px;color:#fff;display:flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;overflow:hidden}
+  .cpz-cta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:8px 18px 0;width:100%;max-width:100%}
+  .cpz-cta a{min-width:0;text-align:center;text-decoration:none;font-size:12px;font-weight:700;padding:9px 4px;border-radius:10px;color:#fff;display:flex;align-items:center;justify-content:center;gap:5px;white-space:nowrap;overflow:hidden}
   .cpz-cta a svg{width:15px;height:15px}
   .cpz-cta .wa{background:#16a34a}.cpz-cta .call{background:#e08600}.cpz-cta .form{background:#7c3aed}
 
-  .cpz-foot{padding:12px 14px;background:#fff;border-top:1px solid rgba(124,58,237,.1);display:flex;gap:8px;align-items:flex-end;width:100%;max-width:100%;overflow:hidden}
-  .cpz-input{flex:1 1 auto;min-width:0;border:1px solid rgba(124,58,237,.2);border-radius:22px;padding:11px 15px;font-size:16px;font-family:inherit;
+  .cpz-foot{padding:12px 14px;background:#fff;border-top:1px solid rgba(124,58,237,.1);display:grid;grid-template-columns:minmax(0,1fr) 42px;gap:8px;align-items:end;width:100%;max-width:100%;overflow:hidden}
+  .cpz-input{width:100%;min-width:0;border:1px solid rgba(124,58,237,.2);border-radius:22px;padding:11px 15px;font-size:16px;font-family:inherit;
     resize:none;max-height:90px;outline:none;color:#1a1033;line-height:1.4}
   .cpz-input:focus{border-color:#7c3aed}
   .cpz-send{width:42px;height:42px;flex-shrink:0;border:none;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#6d28d9);
