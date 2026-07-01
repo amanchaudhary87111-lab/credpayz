@@ -155,6 +155,15 @@
   var sendBtn = panel.querySelector("#cpzSend");
 
   // ---------- state (persists while browsing pages in one session) ----------
+  // Unique ID for this conversation (groups all its messages into one row in the log)
+  var SID = (function () {
+    try {
+      var s = sessionStorage.getItem("cpz_sid");
+      if (!s) { s = "c" + Date.now().toString(36) + Math.random().toString(36).slice(2, 8); sessionStorage.setItem("cpz_sid", s); }
+      return s;
+    } catch (e) { return "c" + Date.now(); }
+  })();
+
   var history = [];
   try {
     var saved = sessionStorage.getItem("cpz_chat");
@@ -377,7 +386,7 @@
     fetch(CONFIG.BACKEND_URL, {
       method: "POST",
       headers: { "Content-Type": "text/plain;charset=utf-8" },
-      body: JSON.stringify({ messages: history })
+      body: JSON.stringify({ messages: history, sessionId: SID, page: (location.pathname || "/") })
     })
       .then(function (r) { return r.json(); })
       .then(function (data) {
