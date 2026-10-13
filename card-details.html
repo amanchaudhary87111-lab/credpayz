@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#6C3CE0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap">
 <style>
 :root{
   color-scheme:light;
@@ -34,8 +34,8 @@
   --ok:#0F7A4A;
   --ok-soft:#E4F4EA;
   --shadow:0 1px 2px rgba(27,21,48,.05),0 8px 22px rgba(27,21,48,.06);
-  --f-head:"Space Grotesk","Noto Sans Devanagari",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --f-body:"Inter","Noto Sans Devanagari",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-head:"Space Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --f-mono:"Space Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 }
 *{box-sizing:border-box}
@@ -204,7 +204,7 @@ input:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--br
     </a>
     <div class="lang" role="group" aria-label="Language">
       <button type="button" id="lang-en" data-lang="en" aria-pressed="true">English</button>
-      <button type="button" id="lang-hi" data-lang="hi" aria-pressed="false">हिंदी</button>
+      <button type="button" id="lang-hi" data-lang="hi" aria-pressed="false">Hinglish</button>
     </div>
   </header>
 
@@ -347,8 +347,8 @@ input:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--br
       notYou:"Not you?",
       cards:"Your cards", card:"Card", countN1:"1 card", countN:"{n} cards",
       bank:"Bank name", bankPh:"e.g. HDFC Bank, SBI, IDFC FIRST",
-      variant:"Card variant", variantSub:"(Business Regalia, BizGrow, Millennia, Diners Club, IDFC FIRST Millennia, HSBC Platinum…)", variantPh:"e.g. Millennia, Regalia, BizGrow",
-      network:"Network", networkSub:"(Visa, Mastercard, RuPay, American Express, Diners Club)",
+      variant:"Card variant",
+      network:"Network",
       outstanding:"Outstanding amount",
       billing:"Billing date", billingSub:"(bill is generated)", due:"Due date", dueSub:"(last date to pay)", billPh:"e.g. 7", duePh:"e.g. 27",
       payable:"This card can be paid <b>{range}</b>",
@@ -390,56 +390,56 @@ input:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--br
       locale:"en-IN"
     },
     hi: {
-      title:"अपने क्रेडिट कार्ड जोड़ें", titleBack:"आपके सेव किए कार्ड",
-      lede:"हर क्रेडिट कार्ड के लिए एक बॉक्स भरें। राशि या तारीख़ अभी नहीं पता? खाली छोड़ दें और बाद में भरें। हर ड्यू डेट से पहले हम आपको याद दिलाएँगे।",
-      ledeBack:"नए कार्ड जोड़ें, बाकी जानकारी भरें या जो कार्ड अब इस्तेमाल नहीं करते उन्हें हटाएँ। पूरा होने पर सेव दबाएँ।",
-      safe:"यहाँ पूरा कार्ड नंबर, CVV या OTP कभी न लिखें। हमें सिर्फ़ नीचे दी गई जानकारी चाहिए।",
-      details:"आपकी जानकारी", name:"पूरा नाम", namePh:"आपका नाम", mobile:"मोबाइल नंबर", mobilePh:"10 अंकों का नंबर",
-      email:"ईमेल आईडी", emailSub:"(आपकी ड्यू डेट याद दिलाने के लिए)", emailPh:"जैसे rahul@gmail.com",
-      notYou:"आप नहीं हैं?",
-      cards:"आपके कार्ड", card:"कार्ड", countN1:"1 कार्ड", countN:"{n} कार्ड",
-      bank:"बैंक का नाम", bankPh:"जैसे HDFC Bank, SBI, IDFC FIRST",
-      variant:"कार्ड वेरिएंट", variantSub:"(Business Regalia, BizGrow, Millennia, Diners Club, IDFC FIRST Millennia, HSBC Platinum…)", variantPh:"जैसे Millennia, Regalia, BizGrow",
-      network:"नेटवर्क", networkSub:"(Visa, Mastercard, RuPay, American Express, Diners Club)",
-      outstanding:"बकाया राशि",
-      billing:"बिलिंग तारीख़", billingSub:"(बिल बनने की तारीख़)", due:"ड्यू डेट", dueSub:"(भुगतान की आख़िरी तारीख़)", billPh:"जैसे 7", duePh:"जैसे 27",
-      payable:"इस कार्ड का भुगतान <b>{range}</b> हो सकता है",
-      later:"बाद में भर सकते हैं: {list}",
-      mVariant:"कार्ड वेरिएंट", mNetwork:"नेटवर्क", mAmount:"राशि", mBill:"बिलिंग तारीख़", mDue:"ड्यू डेट",
-      chipSaved:"सेव है", chipEdited:"बदला गया", chipNew:"नया",
-      remove:"हटाएँ", addCard:"एक और कार्ड जोड़ें",
-      meetEyebrow:"मीटिंग के दिन",
-      meetHead:"आप इन दिनों में CredPayZ टीम से मिल सकते हैं",
-      meetEmpty:"अपने कार्ड की बिलिंग तारीख़ और ड्यू डेट भरें। मीटिंग के दिन यहाँ दिखेंगे।",
-      from:"से", to:"तक", on:"दिन",
-      meetAll1:"इन दिनों में आपके कार्ड का बिल बन चुका होगा और ड्यू डेट नहीं निकली होगी।",
-      meetAll:"इन दिनों में आपके सभी <b>{n} कार्ड</b> का बिल बन चुका होगा और किसी की ड्यू डेट नहीं निकली होगी।",
-      meetSplit:"आपके कार्ड की तारीख़ें एक साथ नहीं पड़तीं, इसलिए <b>{n} बार</b> मिलना होगा:",
-      meeting:"मीटिंग {n}",
-      missing:"{n} कार्ड की बिलिंग तारीख़ या ड्यू डेट अभी बाकी है।",
-      sumN1:"1 कार्ड · कुल", sumN:"{n} कार्ड · कुल",
-      save:"कार्ड सेव करें", saveBack:"बदलाव सेव करें", saving:"सेव हो रहा है…",
-      eName:"अपना नाम लिखें", eMobile:"10 अंकों का मोबाइल नंबर लिखें", eEmail:"सही ईमेल आईडी लिखें, या खाली छोड़ें", eBank:"बैंक का नाम लिखें",
-      eAmount:"सही राशि लिखें, या खाली छोड़ें", eBill:"1 से 31 के बीच तारीख़ लिखें, या खाली छोड़ें", eDue:"1 से 31 के बीच तारीख़ लिखें, या खाली छोड़ें",
-      fix:"लाल निशान वाले बॉक्स ठीक करें, फिर दोबारा सेव दबाएँ।",
-      saveErr:"सेव नहीं हुआ। इंटरनेट चेक करें और फिर से सेव दबाएँ।",
-      linkExpired:"यह लिंक अब काम नहीं करता। CredPayZ टीम से नया लिंक माँगें।",
-      preview:"यह सिर्फ़ प्रीव्यू है: यह कॉपी Google Sheet से नहीं जुड़ी है।",
-      removed:"कार्ड हटा दिया", removedSaved:"कार्ड हटा दिया। पक्का करने के लिए सेव दबाएँ।", undo:"वापस लाएँ",
-      loading:"आपके सेव किए कार्ड खुल रहे हैं…", loadErr:"सेव किए कार्ड नहीं खुले। इंटरनेट चेक करें।", retry:"फिर से कोशिश करें", fresh:"नया फ़ॉर्म शुरू करें",
-      doneTitle:"सेव हो गया, {name}",
-      doneSaved:"आपके कार्ड CredPayZ के पास सेव हैं। हर ड्यू डेट से पहले हम आपको याद दिलाएँगे।",
-      doneExisting:"{mobile} के कार्ड हमारे पास पहले से सेव हैं। आपने अभी जो कार्ड भरे, वे उसी लिस्ट में जोड़ दिए गए हैं।",
-      doneExisting2:"इस फ़ोन पर अपने सभी कार्ड देखने के लिए CredPayZ टीम से अपना पर्सनल लिंक माँगें।",
-      existingMeet:"ये दिन अभी भरे गए कार्ड के हिसाब से हैं। मीटिंग तय करते समय हमारी टीम आपके पुराने कार्ड भी देखेगी।",
-      linkHead:"आपका पर्सनल लिंक",
-      linkBody:"किसी भी फ़ोन पर यह लिंक खोलकर अपने कार्ड जोड़ें, बदलें या हटाएँ। यह फ़ोन भी आपको याद रखेगा। लिंक किसी और को न दें।",
-      copy:"लिंक कॉपी करें", copied:"लिंक कॉपी हो गया।", selectCopy:"लिंक चुन लिया गया है। फ़ोन के Copy विकल्प से कॉपी करें।",
-      editCards:"कार्ड जोड़ें या बदलें", addMore:"और कार्ड जोड़ें",
-      questions:"कोई सवाल? कॉल या WhatsApp करें",
-      foot:"आपकी जानकारी सिर्फ़ CredPayZ टीम को जाती है। ड्यू डेट से पहले याद दिलाने के लिए हम आपकी तारीख़ों का इस्तेमाल करते हैं। कोई सवाल? कॉल या WhatsApp करें",
-      home:"CredPayZ होम", privacy:"प्राइवेसी पॉलिसी", terms:"नियम व शर्तें",
-      locale:"hi-IN"
+      title:"Apne credit cards add karein", titleBack:"Aapke saved cards",
+      lede:"Har credit card ke liye ek box bharein. Amount ya date abhi nahi pata? Khaali chhod dein aur baad mein bhar dein. Har due date se pehle hum aapko yaad dilayenge.",
+      ledeBack:"Naye cards add karein, baaki details bharein ya jo cards ab use nahi karte unhe hata dein. Ho jaye to Save dabayein.",
+      safe:"Yahan apna poora card number, CVV ya OTP kabhi na likhein. Humein sirf neeche di gayi details chahiye.",
+      details:"Aapki details", name:"Poora naam", namePh:"Aapka naam", mobile:"Mobile number", mobilePh:"10 digit ka number",
+      email:"Email ID", emailSub:"(due date yaad dilane ke liye)", emailPh:"jaise rahul@gmail.com",
+      notYou:"Aap nahi hain?",
+      cards:"Aapke cards", card:"Card", countN1:"1 card", countN:"{n} cards",
+      bank:"Bank ka naam", bankPh:"jaise HDFC Bank, SBI, IDFC FIRST",
+      variant:"Card variant",
+      network:"Network",
+      outstanding:"Outstanding amount (bakaya)",
+      billing:"Billing date", billingSub:"(bill banne ki date)", due:"Due date", dueSub:"(payment ki aakhri date)", billPh:"jaise 7", duePh:"jaise 27",
+      payable:"Is card ka payment <b>{range}</b> ho sakta hai",
+      later:"Baad mein bhar sakte hain: {list}",
+      mVariant:"card variant", mNetwork:"network", mAmount:"amount", mBill:"billing date", mDue:"due date",
+      chipSaved:"Saved", chipEdited:"Badla gaya", chipNew:"Naya",
+      remove:"Hatayein", addCard:"Ek aur card add karein",
+      meetEyebrow:"Meeting ke din",
+      meetHead:"Aap in dino mein CredPayZ team se mil sakte hain",
+      meetEmpty:"Apne cards ki billing date aur due date bharein. Meeting ke din yahan dikhenge.",
+      from:"Se", to:"Tak", on:"Din",
+      meetAll1:"In dino mein aapke card ka bill ban chuka hoga aur due date nahi nikli hogi.",
+      meetAll:"In dino mein aapke sabhi <b>{n} cards</b> ka bill ban chuka hoga aur kisi ki due date nahi nikli hogi.",
+      meetSplit:"Aapke cards ki dates ek saath nahi padti, isliye <b>{n} baar</b> milna hoga:",
+      meeting:"Meeting {n}",
+      missing:"{n} card(s) ki billing date ya due date abhi baaki hai.",
+      sumN1:"1 card · total", sumN:"{n} cards · total",
+      save:"Cards save karein", saveBack:"Changes save karein", saving:"Save ho raha hai…",
+      eName:"Apna naam likhein", eMobile:"10 digit ka mobile number likhein", eEmail:"Sahi email ID likhein, ya khaali chhod dein", eBank:"Bank ka naam likhein",
+      eAmount:"Sahi amount likhein, ya khaali chhod dein", eBill:"1 se 31 ke beech date likhein, ya khaali chhod dein", eDue:"1 se 31 ke beech date likhein, ya khaali chhod dein",
+      fix:"Laal nishaan wale box theek karein, phir dobara Save dabayein.",
+      saveErr:"Save nahi hua. Internet check karein aur phir se Save dabayein.",
+      linkExpired:"Yeh link ab kaam nahi karta. CredPayZ team se naya link maangein.",
+      preview:"Sirf preview hai: yeh copy Google Sheet se judi nahi hai.",
+      removed:"Card hata diya", removedSaved:"Card hata diya. Pakka karne ke liye Save dabayein.", undo:"Wapas layein",
+      loading:"Aapke saved cards khul rahe hain…", loadErr:"Saved cards nahi khule. Internet check karein.", retry:"Phir se try karein", fresh:"Naya form shuru karein",
+      doneTitle:"Save ho gaya, {name}",
+      doneSaved:"Aapke cards CredPayZ ke paas save hain. Har due date se pehle hum aapko yaad dilayenge.",
+      doneExisting:"{mobile} ke cards humare paas pehle se save hain. Aapne abhi jo cards bhare, woh usi list mein jod diye gaye hain.",
+      doneExisting2:"Is phone par apne saare cards dekhne ke liye CredPayZ team se apna personal link maangein.",
+      existingMeet:"Yeh din abhi bhare gaye cards ke hisaab se hain. Meeting fix karte waqt humari team aapke purane cards bhi dekhegi.",
+      linkHead:"Aapka personal link",
+      linkBody:"Kisi bhi phone par yeh link kholkar apne cards add karein, badlein ya hatayein. Yeh phone bhi aapko yaad rakhega. Link kisi aur ko na dein.",
+      copy:"Link copy karein", copied:"Link copy ho gaya.", selectCopy:"Link select ho gaya hai. Phone ke Copy option se copy karein.",
+      editCards:"Cards add karein ya badlein", addMore:"Aur cards add karein",
+      questions:"Koi sawaal? Call ya WhatsApp karein",
+      foot:"Aapki details sirf CredPayZ team ko jaati hain. Due date se pehle yaad dilane ke liye hum aapki dates ka use karte hain. Koi sawaal? Call ya WhatsApp karein",
+      home:"CredPayZ home", privacy:"Privacy policy", terms:"Terms",
+      locale:"en-IN"
     }
   };
 
@@ -606,7 +606,7 @@ input:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--br
   }
   function applyStatic(){
     var t = T();
-    document.documentElement.lang = lang;
+    document.documentElement.lang = lang === "hi" ? "hi-Latn" : "en";
     document.querySelectorAll("[data-t]").forEach(function(el){ var k = el.getAttribute("data-t"); if (t[k] != null) el.textContent = t[k]; });
     document.querySelectorAll("[data-tph]").forEach(function(el){ var k = el.getAttribute("data-tph"); if (t[k] != null) el.placeholder = t[k]; });
     $("#lang-en").setAttribute("aria-pressed", lang === "en");
@@ -658,12 +658,12 @@ input:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--br
           '<p class="err" id="err-bank-' + id + '"></p>' +
         '</div>' +
         '<div class="field span2">' +
-          '<label for="variant-' + id + '">' + t.variant + '<span class="sub">' + t.variantSub + '</span></label>' +
-          '<input id="variant-' + id + '" data-k="variant" type="text" maxlength="60" autocomplete="off" placeholder="' + t.variantPh + '">' +
+          '<label for="variant-' + id + '">' + t.variant + '</label>' +
+          '<input id="variant-' + id + '" data-k="variant" type="text" maxlength="60" autocomplete="off">' +
           '<p class="err" id="err-variant-' + id + '"></p>' +
         '</div>' +
         '<fieldset class="field span2">' +
-          '<legend>' + t.network + '<span class="sub">' + t.networkSub + '</span></legend>' +
+          '<legend>' + t.network + '</legend>' +
           '<div class="nets" id="nets-' + id + '">' + nets + '</div>' +
           '<p class="err" id="err-network-' + id + '"></p>' +
         '</fieldset>' +
@@ -709,7 +709,7 @@ input:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--br
   }
 
   function approx(n){
-    var t = lang === "en" ? { k:"thousand", l:"lakh", c:"crore" } : { k:"हज़ार", l:"लाख", c:"करोड़" };
+    var t = lang === "en" ? { k:"thousand", l:"lakh", c:"crore" } : { k:"hazaar", l:"lakh", c:"crore" };
     function tr(v){ return String(Number(v.toFixed(2))); }
     if (!(n >= 1000)) return "";
     if (n >= 1e7) return "≈ ₹" + tr(n / 1e7) + " " + t.c;
