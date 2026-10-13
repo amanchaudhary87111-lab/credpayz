@@ -641,9 +641,6 @@ input:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--br
 
   function cardHTML(c, i){
     var t = T(), id = c.id;
-    var nets = NETWORKS.map(function(n, k){
-      return '<label class="net"><input type="radio" name="net-' + id + '" id="net-' + id + '-' + k + '" value="' + n + '" data-k="network"><span>' + n + '</span></label>';
-    }).join("");
     return '' +
       '<div class="card-head">' +
         '<span class="card-no">' + t.card + ' ' + (i + 1) + '</span>' +
@@ -657,16 +654,6 @@ input:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--br
           '<input id="bank-' + id + '" data-k="bank" type="text" maxlength="60" autocomplete="off" placeholder="' + t.bankPh + '">' +
           '<p class="err" id="err-bank-' + id + '"></p>' +
         '</div>' +
-        '<div class="field span2">' +
-          '<label for="variant-' + id + '">' + t.variant + '</label>' +
-          '<input id="variant-' + id + '" data-k="variant" type="text" maxlength="60" autocomplete="off">' +
-          '<p class="err" id="err-variant-' + id + '"></p>' +
-        '</div>' +
-        '<fieldset class="field span2">' +
-          '<legend>' + t.network + '</legend>' +
-          '<div class="nets" id="nets-' + id + '">' + nets + '</div>' +
-          '<p class="err" id="err-network-' + id + '"></p>' +
-        '</fieldset>' +
         '<div class="field span2">' +
           '<label for="amount-' + id + '">' + t.outstanding + '</label>' +
           '<div class="prefix rupee"><span>₹</span><input id="amount-' + id + '" data-k="amount" type="text" inputmode="decimal" maxlength="16" autocomplete="off" placeholder="45,000"></div>' +
@@ -698,9 +685,7 @@ input:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--br
       el.setAttribute("aria-label", t.card + " " + (i + 1));
       el.innerHTML = cardHTML(c, i);
       list.appendChild(el);
-      ["bank","variant","amount","billDay","dueDay"].forEach(function(k){ $("#" + k + "-" + c.id, el).value = c[k]; });
-      var k = NETWORKS.indexOf(c.network);
-      if (k >= 0) $("#net-" + c.id + "-" + k, el).checked = true;
+      ["bank","amount","billDay","dueDay"].forEach(function(k){ $("#" + k + "-" + c.id, el).value = c[k]; });
       el.querySelector("[data-remove]").hidden = state.cards.length < 2 && !c.cardId;
       updateCard(c.id);
     });
@@ -719,8 +704,6 @@ input:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--br
   function isBlank(c){ return !c.cardId && FIELDS.every(function(k){ return !String(c[k] || "").trim(); }); }
   function missingList(c){
     var t = T(), m = [];
-    if (!c.variant.trim()) m.push(t.mVariant);
-    if (NETWORKS.indexOf(c.network) < 0) m.push(t.mNetwork);
     if (!(parseAmt(c.amount) > 0)) m.push(t.mAmount);
     if (!dayNum(c.billDay)) m.push(t.mBill);
     if (!dayNum(c.dueDay)) m.push(t.mDue);
