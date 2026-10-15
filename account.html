@@ -72,15 +72,16 @@ footer{background:var(--bg0);border-top:1px solid var(--border);padding:48px 0 2
 @media(max-width:768px){.nl,.btn-g{display:none}.burger{display:block}.arow{grid-template-columns:1fr}.fbot{flex-direction:column;text-align:center}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
+<style id="menu-fit">/* menu has 9 links: use the ☰ menu below 1200px so it never wraps */@media(max-width:1199px){.nl,.btn-g{display:none}.burger{display:block}}</style>
 </head>
 <body>
 <canvas id="bgc"></canvas>
 <div class="cursor-ring" id="cr"></div>
-<div class="mm" id="mm"><span class="mclose" id="mc">✕</span><a href="index.html" onclick="cM()">Home</a><a href="about.html" onclick="cM()">About</a><a href="features.html" onclick="cM()">Features</a><a href="index.html#pricing" onclick="cM()">Pricing</a><a href="contact.html" onclick="cM()">Contact</a></div>
+<div class="mm" id="mm"><span class="mclose" id="mc">✕</span><a href="index.html" onclick="cM()">Home</a><a href="about.html" onclick="cM()">About</a><a href="features.html" onclick="cM()">Features</a><a href="index.html#pricing" onclick="cM()">Pricing</a><a href="meet-with-us.html" onclick="cM()">Meet With Us</a><a href="contact.html" onclick="cM()">Contact</a></div>
 <header class="nav" id="nav">
   <div class="nav-in">
     <a href="index.html" class="brand"><div class="bm"><img src="assets/icon-80.png" alt="CredPayZ logo" width="38" height="38"></div><span>Cred<b>PayZ</b></span></a>
-    <nav class="nl"><a href="index.html">Home</a><a href="about.html">About</a><a href="features.html">Features</a><a href="index.html#pricing">Pricing</a><a href="contact.html">Contact</a></nav>
+    <nav class="nl"><a href="index.html">Home</a><a href="about.html">About</a><a href="features.html">Features</a><a href="index.html#pricing">Pricing</a><a href="meet-with-us.html">Meet With Us</a><a href="contact.html">Contact</a></nav>
     <div class="nr"><a href="https://wa.me/918588886883" class="btn-g" target="_blank" rel="noopener">WhatsApp</a><a href="contact.html#apply" class="btn-c">Get Instant Money</a></div>
     <button class="burger" id="burger" onclick="oM()">☰</button>
   </div>
