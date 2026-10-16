@@ -1,0 +1,1059 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>CredPayZ Card Details</title>
+<meta name="description" content="Save your credit card details with CredPayZ and get reminded before your due dates.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#F7F5FC;
+  --surface:#FFFFFF;
+  --ink:#1B1530;
+  --muted:#645D78;
+  --line:#E7E2F3;
+  --line-strong:#CEC6E3;
+  --brand:#6C3CE0;
+  --brand-hover:#5A2DC8;
+  --brand-ink:#FFFFFF;
+  --brand-soft:#F0EAFE;
+  --deep:#27165A;
+  --deep-2:#341E73;
+  --deep-ink:#FFFFFF;
+  --deep-muted:#C7BBF0;
+  --warn:#9A4A00;
+  --warn-soft:#FFF0DC;
+  --bad:#B42318;
+  --bad-soft:#FDEBE8;
+  --ok:#0F7A4A;
+  --ok-soft:#E4F4EA;
+  --shadow:0 1px 2px rgba(27,21,48,.05),0 8px 22px rgba(27,21,48,.06);
+  --f-head:"Space Grotesk","Noto Sans Devanagari",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-body:"Inter","Noto Sans Devanagari",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-mono:"Space Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+[hidden]{display:none!important}
+a{color:var(--brand)}
+.wrap{max-width:660px;margin:0 auto;padding-inline:16px;padding-block:0 150px}
+
+/* header */
+.site{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:16px 26px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--f-head);font-weight:700;font-size:22px;letter-spacing:-.02em;color:var(--ink);text-decoration:none;line-height:1}
+.brand i{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:var(--brand);color:var(--brand-ink)}
+.brand i svg{width:19px;height:19px}
+.lang{display:inline-flex;border:1px solid var(--line-strong);border-radius:999px;padding:3px;background:var(--surface);flex:none}
+.lang button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:14px;font-weight:600;line-height:1;padding:8px 12px;border-radius:999px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink)}
+.lang button:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+
+h1{font-family:var(--f-head);font-weight:700;font-size:clamp(28px,7vw,36px);line-height:1.1;letter-spacing:-.02em;margin:0 0 10px;text-wrap:balance}
+.lede{margin:0;color:var(--muted);max-width:60ch;font-size:17px}
+.safe{display:flex;gap:10px;align-items:flex-start;background:var(--brand-soft);border-radius:12px;padding:12px 14px;margin-top:18px;font-size:15px;line-height:1.45}
+.safe svg{width:20px;height:20px;flex:none;color:var(--brand);margin-top:1px}
+
+.sec{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:32px 0 12px}
+.sec h2{font-family:var(--f-head);font-weight:700;font-size:21px;margin:0;line-height:1.2;letter-spacing:-.01em}
+.count{font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+
+.panel,.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+.panel{padding:16px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 12px}
+.span2{grid-column:1/-1}
+@media (max-width:359px){.grid{grid-template-columns:minmax(0,1fr)}}
+
+/* returning customer */
+.who{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin-top:20px;box-shadow:var(--shadow)}
+.who .av{width:40px;height:40px;border-radius:50%;background:var(--brand-soft);color:var(--brand);display:grid;place-items:center;font-family:var(--f-head);font-weight:700;font-size:18px;flex:none}
+.who .wt{flex:1;min-width:0;line-height:1.3}
+.who .wn{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.who .wm{color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums}
+.linkbtn{background:none;border:0;padding:6px 4px;font:inherit;font-size:14px;font-weight:600;color:var(--brand);cursor:pointer;text-decoration:underline;flex:none}
+
+.field{min-width:0;margin:0;padding:0;border:0}
+.field label,.field legend{display:block;font-weight:600;font-size:15px;line-height:1.3;margin-bottom:6px;padding:0}
+.field .sub{display:block;font-weight:400;font-size:13.5px;color:var(--muted);margin-top:2px}
+input[type=text],input[type=tel],input[type=email]{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--surface);border:1px solid var(--line-strong);border-radius:10px;padding:10px 12px;min-height:48px;transition:border-color .15s,box-shadow .15s}
+input::placeholder{color:var(--muted);opacity:.7}
+input:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft)}
+.prefix{position:relative}
+.prefix > span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:600;pointer-events:none}
+.prefix.rupee input{padding-left:30px;font-size:18px;font-weight:600;font-variant-numeric:tabular-nums}
+.prefix.cc input{padding-left:48px;font-variant-numeric:tabular-nums}
+.invalid,.nets.invalid .net span{border-color:var(--bad)!important;background:var(--bad-soft)!important}
+.hint{color:var(--muted);font-size:14px;line-height:1.35;margin:6px 0 0}
+.hint:empty{display:none}
+.err{color:var(--bad);font-size:14px;line-height:1.35;margin:6px 0 0;font-weight:500}
+.err:empty{display:none}
+
+/* network chips */
+.nets{display:flex;flex-wrap:wrap;gap:8px}
+.net{position:relative}
+.net input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.net span{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:1px solid var(--line-strong);border-radius:999px;font-weight:600;font-size:15px;background:var(--surface);cursor:pointer;user-select:none;transition:background .15s,border-color .15s}
+.net span:hover{border-color:var(--brand)}
+.net input:checked + span{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
+.net input:focus-visible + span{outline:2px solid var(--brand);outline-offset:2px}
+
+/* card blocks */
+.cards{display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+.card{padding:12px 16px 18px;min-width:0}
+.card-head{display:flex;align-items:center;gap:8px;margin:0 -4px 14px 0;min-height:36px}
+.card-no{font-family:var(--f-mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--brand);background:var(--brand-soft);border-radius:6px;padding:3px 8px;white-space:nowrap;flex:none}
+.card-title{font-weight:600;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chip{font-size:12.5px;font-weight:600;border-radius:999px;padding:2px 9px;white-space:nowrap;flex:none;line-height:1.5}
+.chip.saved{background:var(--ok-soft);color:var(--ok)}
+.chip.edited{background:var(--warn-soft);color:var(--warn)}
+.chip.new{background:var(--brand-soft);color:var(--brand)}
+.icon-btn{width:36px;height:36px;border-radius:10px;border:1px solid transparent;background:transparent;color:var(--muted);display:grid;place-items:center;cursor:pointer;flex:none;padding:0}
+.icon-btn svg{width:18px;height:18px}
+.icon-btn:hover{background:var(--bad-soft);color:var(--bad)}
+.icon-btn:focus-visible{outline:2px solid var(--brand);outline-offset:1px}
+.window,.later{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);background:var(--bg);border-radius:10px;padding:8px 12px;line-height:1.4}
+.window b{color:var(--ink);font-weight:600}
+.window svg,.later svg{width:16px;height:16px;flex:none;color:var(--brand);margin-top:2px}
+.later{background:var(--warn-soft);color:var(--warn)}
+.later svg{color:var(--warn)}
+
+.add{width:100%;margin-top:14px;min-height:56px;border:1.5px dashed var(--brand);color:var(--brand);background:transparent;border-radius:14px;font:inherit;font-weight:700;font-size:17px;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer}
+.add svg{width:20px;height:20px}
+.add:hover{background:var(--brand-soft)}
+.add:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+
+/* meeting panel */
+.meet{margin-top:32px;background:var(--deep);color:var(--deep-ink);border-radius:20px;padding:22px 20px 20px}
+.meet .eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--deep-muted);margin:0 0 8px}
+.meet h2{font-family:var(--f-head);font-weight:700;font-size:22px;line-height:1.2;margin:0 0 16px;text-wrap:balance;letter-spacing:-.01em}
+.meet .empty{color:var(--deep-muted);margin:0}
+.range{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:8px}
+.range.one{grid-template-columns:minmax(0,1fr)}
+.day{background:var(--deep-2);border-radius:12px;padding:10px 12px;min-width:0}
+.day small{display:block;font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--deep-muted)}
+.day strong{display:block;font-family:var(--f-head);font-size:clamp(17px,5vw,24px);font-weight:700;line-height:1.2}
+.to{color:var(--deep-muted);font-weight:600}
+.meet .note{margin:14px 0 0;color:var(--deep-muted);font-size:15px}
+.meet .note b{color:var(--deep-ink)}
+.mlist{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.mlist li{background:var(--deep-2);border-radius:14px;padding:12px 14px}
+.mlist .mt{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.mlist .mn{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--deep-muted)}
+.mlist .md{font-family:var(--f-head);font-weight:700;font-size:19px}
+.mlist .mc{margin-top:4px;color:var(--deep-muted);font-size:14.5px}
+.warnline{margin:12px 0 0;font-size:14px;color:#FFD9A8}
+
+.foot{color:var(--muted);font-size:14px;margin:28px 0 0;max-width:60ch}
+.foot b{color:var(--ink);font-weight:600;white-space:nowrap}
+.links{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;font-size:14px}
+
+/* sticky bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:10;background:var(--surface);border-top:1px solid var(--line);box-shadow:0 -6px 22px rgba(27,21,48,.08);padding:10px 0 calc(12px + env(safe-area-inset-bottom,0px))}
+.bar-msg{max-width:660px;margin:0 auto 8px;padding-inline:16px;color:var(--bad);font-size:14px;font-weight:600;line-height:1.35}
+.bar-msg.info{color:var(--warn)}
+.bar-in{max-width:660px;margin:0 auto;padding-inline:16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.sum{min-width:0;line-height:1.2}
+.sum .n{font-size:13px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sum .t{font-family:var(--f-head);font-weight:700;font-size:21px;white-space:nowrap;font-variant-numeric:tabular-nums;margin-top:3px}
+.submit,.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;font:inherit;font-weight:700;font-size:16px;line-height:1;padding:15px 20px;border-radius:12px;white-space:nowrap;cursor:pointer;text-decoration:none}
+.submit,.btn.primary{background:var(--brand);color:var(--brand-ink)}
+.submit:hover,.btn.primary:hover{background:var(--brand-hover)}
+.submit{flex:none}
+.submit:focus-visible,.btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.submit[disabled]{opacity:.65;cursor:progress}
+.submit svg{width:18px;height:18px}
+.btn.plain{background:var(--surface);color:var(--ink);border:1px solid var(--line-strong)}
+.btn.plain:hover{border-color:var(--brand)}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+
+/* loading + done */
+.state{padding-block:40px;text-align:center;color:var(--muted)}
+.spin{width:36px;height:36px;border-radius:50%;border:3px solid var(--brand-soft);border-top-color:var(--brand);margin:0 auto 14px;animation:spin 0.9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.done{padding-block:8px 40px}
+.tick{width:56px;height:56px;border-radius:50%;background:var(--ok-soft);color:var(--ok);display:grid;place-items:center;margin-bottom:16px}
+.tick svg{width:28px;height:28px}
+.done .lede + .lede{margin-top:10px}
+.linkbox{margin-top:24px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow)}
+.linkbox h2{font-family:var(--f-head);font-size:19px;margin:0 0 6px}
+.linkbox p{margin:0 0 12px;color:var(--muted);font-size:15px}
+.linkrow{display:flex;gap:8px;align-items:stretch;flex-wrap:wrap}
+.linktext{flex:1 1 220px;min-width:0;font-family:var(--f-mono);font-size:13px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px;word-break:break-all;user-select:all}
+.linkrow .btn{flex:none;padding:12px 16px;font-size:15px}
+
+/* toast */
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(92px + env(safe-area-inset-bottom,0px));z-index:20;background:var(--ink);color:var(--surface);border-radius:12px;padding:8px 8px 8px 16px;display:flex;align-items:center;gap:12px;max-width:calc(100% - 32px);font-weight:500;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.toast button{background:transparent;border:0;color:var(--surface);font:inherit;font-weight:700;text-decoration:underline;padding:8px 10px;cursor:pointer;border-radius:8px}
+
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <a class="brand" href="index.html">
+      <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18"/><path d="M7 15h4"/></svg></i>
+      <span>CredPayZ</span>
+    </a>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" id="lang-en" data-lang="en" aria-pressed="true">English</button>
+      <button type="button" id="lang-hi" data-lang="hi" aria-pressed="false">हिंदी</button>
+    </div>
+  </header>
+
+  <!-- loading saved cards -->
+  <div id="loading-view" class="state" hidden>
+    <div class="spin" id="load-spin"></div>
+    <p id="load-text" data-t="loading"></p>
+    <div class="actions" id="load-actions" style="justify-content:center" hidden>
+      <button type="button" class="btn primary" id="load-retry" data-t="retry"></button>
+      <button type="button" class="btn plain" id="load-fresh" data-t="fresh"></button>
+    </div>
+  </div>
+
+  <!-- the form -->
+  <div id="form-view" hidden>
+    <h1 id="title"></h1>
+    <p class="lede" id="lede"></p>
+    <div class="safe">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5.5c0 4.3-3 7.9-7 9.5-4-1.6-7-5.2-7-9.5V6l7-3z"/><path d="M9 12l2 2 4-4" stroke-linecap="round"/></svg>
+      <span data-t="safe"></span>
+    </div>
+
+    <div class="who" id="who" hidden>
+      <div class="av" id="who-av" aria-hidden="true"></div>
+      <div class="wt"><div class="wn" id="who-name"></div><div class="wm" id="who-mobile"></div></div>
+      <button type="button" class="linkbtn" id="not-you" data-t="notYou"></button>
+    </div>
+
+    <form id="form" novalidate autocomplete="on">
+      <div class="sec"><h2 data-t="details"></h2></div>
+      <div class="panel">
+        <div class="grid">
+          <div class="field span2 only-new">
+            <label for="f-name" data-t="name"></label>
+            <input id="f-name" name="name" type="text" autocomplete="name" maxlength="80" data-tph="namePh">
+            <p class="err" id="err-name" aria-live="polite"></p>
+          </div>
+          <div class="field span2 only-new">
+            <label for="f-mobile" data-t="mobile"></label>
+            <div class="prefix cc"><span>+91</span><input id="f-mobile" name="mobile" type="tel" inputmode="tel" autocomplete="tel-national" maxlength="16" data-tph="mobilePh"></div>
+            <p class="err" id="err-mobile" aria-live="polite"></p>
+          </div>
+          <div class="field span2">
+            <label for="f-email"><span data-t="email"></span><span class="sub" data-t="emailSub"></span></label>
+            <input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="100" data-tph="emailPh">
+            <p class="err" id="err-email" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+      <div class="hp" aria-hidden="true"><label for="f-website">Website</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+
+      <div class="sec"><h2 data-t="cards"></h2><span class="count" id="count"></span></div>
+      <div class="cards" id="cards"></div>
+      <button type="button" class="add" id="add">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        <span data-t="addCard"></span>
+      </button>
+    </form>
+
+    <section class="meet" aria-live="polite">
+      <p class="eyebrow" data-t="meetEyebrow"></p>
+      <h2 data-t="meetHead"></h2>
+      <div id="meet-body"></div>
+    </section>
+
+    <p class="foot"><span data-t="foot"></span> <b>+91 99113 12139</b></p>
+    <div class="links"><a href="index.html" data-t="home"></a><a href="privacy.html" data-t="privacy"></a><a href="terms.html" data-t="terms"></a></div>
+  </div>
+
+  <!-- after saving -->
+  <div id="done-view" class="done" hidden>
+    <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <h1 id="done-title"></h1>
+    <p class="lede" id="done-text"></p>
+    <p class="lede" id="done-text2" hidden></p>
+    <section class="meet" aria-labelledby="done-meet-h">
+      <p class="eyebrow" data-t="meetEyebrow"></p>
+      <h2 id="done-meet-h" data-t="meetHead"></h2>
+      <div id="done-meet-body"></div>
+    </section>
+    <div class="linkbox" id="linkbox" hidden>
+      <h2 data-t="linkHead"></h2>
+      <p data-t="linkBody"></p>
+      <div class="linkrow">
+        <div class="linktext" id="my-link"></div>
+        <button type="button" class="btn primary" id="copy-link" data-t="copy"></button>
+      </div>
+      <p class="hint" id="copy-note" aria-live="polite"></p>
+    </div>
+    <div class="actions">
+      <button type="button" class="btn primary" id="back-edit"></button>
+      <a class="btn plain" href="index.html" data-t="home"></a>
+    </div>
+    <p class="foot"><span data-t="questions"></span> <b>+91 99113 12139</b> · <a href="https://wa.me/919911312139" target="_blank" rel="noopener">WhatsApp</a></p>
+  </div>
+</div>
+
+<div class="bar" id="bar" role="region" aria-label="Summary" hidden>
+  <p class="bar-msg" id="bar-msg" role="alert" hidden></p>
+  <div class="bar-in">
+    <div class="sum">
+      <div class="n" id="sum-n"></div>
+      <div class="t" id="sum-t">₹0</div>
+    </div>
+    <button type="button" class="submit" id="submit">
+      <span id="submit-label"></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </button>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" hidden>
+  <span id="toast-text"></span>
+  <button type="button" id="toast-undo" data-t="undo"></button>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ================================================================
+     PASTE YOUR GOOGLE SHEET WEB APP URL BETWEEN THE QUOTES BELOW
+     (it looks like https://script.google.com/macros/s/..../exec)
+     ================================================================ */
+  var SHEET_URL = "";
+
+  var DRAFT_KEY = "credpayz-card-form-v3", AUTH_KEY = "credpayz-card-key", LKEY = "credpayz-lang";
+  var NETWORKS = ["Visa","Mastercard","RuPay","American Express","Diners Club"];
+  var HORIZON = 60;
+
+  var I18N = {
+    en: {
+      title:"Add your credit cards", titleBack:"Your saved cards",
+      lede:"Fill one box for each credit card. Don't know an amount or date yet? Leave it empty and add it later. We'll remind you before each due date.",
+      ledeBack:"Add new cards, fill in missing details or remove cards you no longer use. Tap Save when you're done.",
+      safe:"Never type your full card number, CVV or OTP here. We only need the details below.",
+      details:"Your details", name:"Full name", namePh:"Your name", mobile:"Mobile number", mobilePh:"10-digit number",
+      email:"Email ID", emailSub:"(for reminding you about your due date)", emailPh:"e.g. rahul@gmail.com",
+      notYou:"Not you?",
+      cards:"Your cards", card:"Card", countN1:"1 card", countN:"{n} cards",
+      bank:"Bank name", bankPh:"e.g. HDFC Bank, SBI, IDFC FIRST",
+      variant:"Card variant", variantSub:"(Business Regalia, BizGrow, Millennia, Diners Club, IDFC FIRST Millennia, HSBC Platinum…)", variantPh:"e.g. Millennia, Regalia, BizGrow",
+      network:"Network", networkSub:"(Visa, Mastercard, RuPay, American Express, Diners Club)",
+      outstanding:"Outstanding amount",
+      billing:"Billing date", billingSub:"(bill is generated)", due:"Due date", dueSub:"(last date to pay)", billPh:"e.g. 7", duePh:"e.g. 27",
+      payable:"This card can be paid <b>{range}</b>",
+      later:"You can add later: {list}",
+      mVariant:"card variant", mNetwork:"network", mAmount:"amount", mBill:"billing date", mDue:"due date",
+      chipSaved:"Saved", chipEdited:"Edited", chipNew:"New",
+      remove:"Remove", addCard:"Add another card",
+      meetEyebrow:"Meeting days",
+      meetHead:"You can meet the CredPayZ team on these days",
+      meetEmpty:"Add the billing date and due date of your cards. Your meeting days will show here.",
+      from:"From", to:"To", on:"On",
+      meetAll1:"Your card's bill is ready and not yet due on these days.",
+      meetAll:"All <b>{n} cards</b> have their bills ready and none is past its due date on these days.",
+      meetSplit:"Your cards' dates don't overlap, so we'll meet <b>{n} times</b>:",
+      meeting:"Meeting {n}",
+      missing:"{n} card(s) still need a billing date or due date.",
+      sumN1:"1 card · total", sumN:"{n} cards · total",
+      save:"Save cards", saveBack:"Save changes", saving:"Saving…",
+      eName:"Enter your name", eMobile:"Enter a 10-digit mobile number", eEmail:"Enter a valid email ID, or leave it empty", eBank:"Enter the bank name",
+      eAmount:"Enter a valid amount, or leave it empty", eBill:"Enter a date from 1 to 31, or leave it empty", eDue:"Enter a date from 1 to 31, or leave it empty",
+      fix:"Fix the boxes marked in red, then tap Save again.",
+      saveErr:"Could not save. Check your internet and tap Save again.",
+      linkExpired:"This link no longer works. Ask the CredPayZ team for a new one.",
+      preview:"Preview only: this copy is not connected to the Google Sheet.",
+      removed:"Card removed", removedSaved:"Card removed. Tap Save to confirm.", undo:"Undo",
+      loading:"Loading your saved cards…", loadErr:"Could not load your saved cards. Check your internet.", retry:"Try again", fresh:"Start a new form",
+      doneTitle:"Saved, {name}",
+      doneSaved:"Your cards are saved with CredPayZ. We'll remind you before each due date.",
+      doneExisting:"We already have cards saved for {mobile}. The cards you just filled have been added to that list.",
+      doneExisting2:"To see all your cards on this phone, ask the CredPayZ team for your personal link.",
+      existingMeet:"These days are for the cards you just filled. Our team will include your earlier cards when fixing the meeting.",
+      linkHead:"Your personal link",
+      linkBody:"Open this link on any phone to add, update or remove your cards. This phone will also remember you. Keep the link private.",
+      copy:"Copy link", copied:"Link copied.", selectCopy:"Link selected. Use your phone's Copy option.",
+      editCards:"Add or edit cards", addMore:"Add more cards",
+      questions:"Questions? Call or WhatsApp",
+      foot:"Your details go only to the CredPayZ team. We use your due dates to remind you before they pass. Questions? Call or WhatsApp",
+      home:"CredPayZ home", privacy:"Privacy policy", terms:"Terms",
+      locale:"en-IN"
+    },
+    hi: {
+      title:"अपने क्रेडिट कार्ड जोड़ें", titleBack:"आपके सेव किए कार्ड",
+      lede:"हर क्रेडिट कार्ड के लिए एक बॉक्स भरें। राशि या तारीख़ अभी नहीं पता? खाली छोड़ दें और बाद में भरें। हर ड्यू डेट से पहले हम आपको याद दिलाएँगे।",
+      ledeBack:"नए कार्ड जोड़ें, बाकी जानकारी भरें या जो कार्ड अब इस्तेमाल नहीं करते उन्हें हटाएँ। पूरा होने पर सेव दबाएँ।",
+      safe:"यहाँ पूरा कार्ड नंबर, CVV या OTP कभी न लिखें। हमें सिर्फ़ नीचे दी गई जानकारी चाहिए।",
+      details:"आपकी जानकारी", name:"पूरा नाम", namePh:"आपका नाम", mobile:"मोबाइल नंबर", mobilePh:"10 अंकों का नंबर",
+      email:"ईमेल आईडी", emailSub:"(आपकी ड्यू डेट याद दिलाने के लिए)", emailPh:"जैसे rahul@gmail.com",
+      notYou:"आप नहीं हैं?",
+      cards:"आपके कार्ड", card:"कार्ड", countN1:"1 कार्ड", countN:"{n} कार्ड",
+      bank:"बैंक का नाम", bankPh:"जैसे HDFC Bank, SBI, IDFC FIRST",
+      variant:"कार्ड वेरिएंट", variantSub:"(Business Regalia, BizGrow, Millennia, Diners Club, IDFC FIRST Millennia, HSBC Platinum…)", variantPh:"जैसे Millennia, Regalia, BizGrow",
+      network:"नेटवर्क", networkSub:"(Visa, Mastercard, RuPay, American Express, Diners Club)",
+      outstanding:"बकाया राशि",
+      billing:"बिलिंग तारीख़", billingSub:"(बिल बनने की तारीख़)", due:"ड्यू डेट", dueSub:"(भुगतान की आख़िरी तारीख़)", billPh:"जैसे 7", duePh:"जैसे 27",
+      payable:"इस कार्ड का भुगतान <b>{range}</b> हो सकता है",
+      later:"बाद में भर सकते हैं: {list}",
+      mVariant:"कार्ड वेरिएंट", mNetwork:"नेटवर्क", mAmount:"राशि", mBill:"बिलिंग तारीख़", mDue:"ड्यू डेट",
+      chipSaved:"सेव है", chipEdited:"बदला गया", chipNew:"नया",
+      remove:"हटाएँ", addCard:"एक और कार्ड जोड़ें",
+      meetEyebrow:"मीटिंग के दिन",
+      meetHead:"आप इन दिनों में CredPayZ टीम से मिल सकते हैं",
+      meetEmpty:"अपने कार्ड की बिलिंग तारीख़ और ड्यू डेट भरें। मीटिंग के दिन यहाँ दिखेंगे।",
+      from:"से", to:"तक", on:"दिन",
+      meetAll1:"इन दिनों में आपके कार्ड का बिल बन चुका होगा और ड्यू डेट नहीं निकली होगी।",
+      meetAll:"इन दिनों में आपके सभी <b>{n} कार्ड</b> का बिल बन चुका होगा और किसी की ड्यू डेट नहीं निकली होगी।",
+      meetSplit:"आपके कार्ड की तारीख़ें एक साथ नहीं पड़तीं, इसलिए <b>{n} बार</b> मिलना होगा:",
+      meeting:"मीटिंग {n}",
+      missing:"{n} कार्ड की बिलिंग तारीख़ या ड्यू डेट अभी बाकी है।",
+      sumN1:"1 कार्ड · कुल", sumN:"{n} कार्ड · कुल",
+      save:"कार्ड सेव करें", saveBack:"बदलाव सेव करें", saving:"सेव हो रहा है…",
+      eName:"अपना नाम लिखें", eMobile:"10 अंकों का मोबाइल नंबर लिखें", eEmail:"सही ईमेल आईडी लिखें, या खाली छोड़ें", eBank:"बैंक का नाम लिखें",
+      eAmount:"सही राशि लिखें, या खाली छोड़ें", eBill:"1 से 31 के बीच तारीख़ लिखें, या खाली छोड़ें", eDue:"1 से 31 के बीच तारीख़ लिखें, या खाली छोड़ें",
+      fix:"लाल निशान वाले बॉक्स ठीक करें, फिर दोबारा सेव दबाएँ।",
+      saveErr:"सेव नहीं हुआ। इंटरनेट चेक करें और फिर से सेव दबाएँ।",
+      linkExpired:"यह लिंक अब काम नहीं करता। CredPayZ टीम से नया लिंक माँगें।",
+      preview:"यह सिर्फ़ प्रीव्यू है: यह कॉपी Google Sheet से नहीं जुड़ी है।",
+      removed:"कार्ड हटा दिया", removedSaved:"कार्ड हटा दिया। पक्का करने के लिए सेव दबाएँ।", undo:"वापस लाएँ",
+      loading:"आपके सेव किए कार्ड खुल रहे हैं…", loadErr:"सेव किए कार्ड नहीं खुले। इंटरनेट चेक करें।", retry:"फिर से कोशिश करें", fresh:"नया फ़ॉर्म शुरू करें",
+      doneTitle:"सेव हो गया, {name}",
+      doneSaved:"आपके कार्ड CredPayZ के पास सेव हैं। हर ड्यू डेट से पहले हम आपको याद दिलाएँगे।",
+      doneExisting:"{mobile} के कार्ड हमारे पास पहले से सेव हैं। आपने अभी जो कार्ड भरे, वे उसी लिस्ट में जोड़ दिए गए हैं।",
+      doneExisting2:"इस फ़ोन पर अपने सभी कार्ड देखने के लिए CredPayZ टीम से अपना पर्सनल लिंक माँगें।",
+      existingMeet:"ये दिन अभी भरे गए कार्ड के हिसाब से हैं। मीटिंग तय करते समय हमारी टीम आपके पुराने कार्ड भी देखेगी।",
+      linkHead:"आपका पर्सनल लिंक",
+      linkBody:"किसी भी फ़ोन पर यह लिंक खोलकर अपने कार्ड जोड़ें, बदलें या हटाएँ। यह फ़ोन भी आपको याद रखेगा। लिंक किसी और को न दें।",
+      copy:"लिंक कॉपी करें", copied:"लिंक कॉपी हो गया।", selectCopy:"लिंक चुन लिया गया है। फ़ोन के Copy विकल्प से कॉपी करें।",
+      editCards:"कार्ड जोड़ें या बदलें", addMore:"और कार्ड जोड़ें",
+      questions:"कोई सवाल? कॉल या WhatsApp करें",
+      foot:"आपकी जानकारी सिर्फ़ CredPayZ टीम को जाती है। ड्यू डेट से पहले याद दिलाने के लिए हम आपकी तारीख़ों का इस्तेमाल करते हैं। कोई सवाल? कॉल या WhatsApp करें",
+      home:"CredPayZ होम", privacy:"प्राइवेसी पॉलिसी", terms:"नियम व शर्तें",
+      locale:"hi-IN"
+    }
+  };
+
+  function $(s, r){ return (r || document).querySelector(s); }
+  function fmt(s, v){ return s.replace(/\{(\w+)\}/g, function(_, k){ return v[k]; }); }
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+  function uid(){ return "c" + Math.random().toString(36).slice(2, 9); }
+  function blank(){ return { id: uid(), cardId:"", bank:"", variant:"", network:"", amount:"", billDay:"", dueDay:"", changed:false }; }
+  function store(k, v){ try { if (v == null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) {} }
+  function read(k){ try { return localStorage.getItem(k); } catch (e) { return null; } }
+
+  var lang = "en";
+  var sl = read(LKEY);
+  if (sl === "en" || sl === "hi") lang = sl;
+  else if ((navigator.language || "").toLowerCase().indexOf("hi") === 0) lang = "hi";
+  function T(){ return I18N[lang]; }
+
+  var FIELDS = ["bank","variant","network","amount","billDay","dueDay"];
+  var auth = null;            // { key, name, mobile } once this phone knows the customer
+  var state = freshState();
+  var showErrors = false, submitting = false, subId = null, view = "form";
+
+  function freshState(){ return { name:"", mobile:"", email:"", cards:[blank()], removed:[] }; }
+  function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(v || "").trim()); }
+  function loadDraft(){
+    try {
+      var s = JSON.parse(read(DRAFT_KEY));
+      if (s && Array.isArray(s.cards) && s.cards.length) {
+        return {
+          name: String(s.name || ""), mobile: String(s.mobile || ""), email: String(s.email || ""), removed: [],
+          cards: s.cards.map(function(c){
+            var b = blank();
+            FIELDS.forEach(function(k){ if (c && c[k] != null) b[k] = String(c[k]); });
+            if (NETWORKS.indexOf(b.network) < 0) b.network = "";
+            return b;
+          })
+        };
+      }
+    } catch (e) {}
+    return null;
+  }
+  var saveTimer;
+  function saveDraft(){
+    if (auth) return; // saved customers load from the sheet instead
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(function(){
+      store(DRAFT_KEY, JSON.stringify({ name: state.name, mobile: state.mobile, email: state.email, cards: state.cards.map(function(c){ var o = {}; FIELDS.forEach(function(k){ o[k] = c[k]; }); return o; }) }));
+    }, 250);
+  }
+
+  /* ---------- numbers & dates ---------- */
+  function parseAmt(s){ var n = parseFloat(String(s || "").replace(/[^\d.]/g, "")); return isFinite(n) ? n : NaN; }
+  function inr(n){ return n.toLocaleString("en-IN", { maximumFractionDigits: 2 }); }
+  function dayNum(v){ var s = String(v == null ? "" : v).trim(); if (!/^\d{1,2}$/.test(s)) return 0; var n = parseInt(s, 10); return n >= 1 && n <= 31 ? n : 0; }
+  function mobileDigits(v){
+    var d = String(v || "").replace(/\D/g, "");
+    if (d.length === 12 && d.indexOf("91") === 0) d = d.slice(2);
+    if (d.length === 11 && d.charAt(0) === "0") d = d.slice(1);
+    return d;
+  }
+  function prettyMobile(d){ return d && d.length === 10 ? "+91 " + d.slice(0, 5) + " " + d.slice(5) : d; }
+
+  /* ---------- meeting-day logic (same rule as the Google Sheet) ----------
+     A card can be paid from the day AFTER its bill is generated
+     up to and including its due date. We look at the next 60 days and
+     find the days when every card can be paid. If no single stretch
+     works for all cards, we split them into the fewest meetings. */
+  function daysIn(y, m){ return new Date(y, m + 1, 0).getDate(); }
+  function onDay(y, m, day){ var f = new Date(y, m, 1); y = f.getFullYear(); m = f.getMonth(); return new Date(y, m, Math.min(day, daysIn(y, m))); }
+  function addDays(dt, n){ return new Date(dt.getFullYear(), dt.getMonth(), dt.getDate() + n); }
+  function canPay(x, b, d){
+    var bill = onDay(x.getFullYear(), x.getMonth(), b);
+    if (bill >= x) bill = onDay(x.getFullYear(), x.getMonth() - 1, b);
+    var due = onDay(bill.getFullYear(), bill.getMonth(), d);
+    if (due <= bill) due = onDay(bill.getFullYear(), bill.getMonth() + 1, d);
+    return x <= due;
+  }
+  function todayDate(){ var n = new Date(); return new Date(n.getFullYear(), n.getMonth(), n.getDate()); }
+  function better(s, run, set, bestRun){
+    if (!set) return true;
+    if (s.length !== set.length) return s.length > set.length;
+    var g = run >= 3, bg = bestRun >= 3;
+    if (g !== bg) return g;
+    return !g && run > bestRun;
+  }
+  function planMeetings(list){
+    var today = todayDate(), dates = [];
+    for (var i = 0; i < HORIZON; i++) dates.push(addDays(today, i));
+    var ok = list.map(function(c){ return dates.map(function(x){ return canPay(x, c.b, c.d); }); });
+    var left = list.map(function(_, k){ return k; }), out = [];
+    while (left.length && out.length < 8) {
+      // Most cards first. If equal: the earliest stretch of at least 3 days;
+      // if there is no such stretch, the longest one.
+      var best = -1, set = null, bestRun = 0;
+      for (var j = 0; j < dates.length; j++) {
+        var s = left.filter(function(k){ return ok[k][j]; });
+        if (!s.length) continue;
+        var run = 1;
+        while (j + run < dates.length && s.every(function(k){ return ok[k][j + run]; })) run++;
+        if (better(s, run, set, bestRun)) { best = j; set = s; bestRun = run; }
+      }
+      if (!set || !set.length) break;
+      out.push({ from: dates[best], to: dates[best + bestRun - 1], cards: set });
+      left = left.filter(function(k){ return set.indexOf(k) < 0; });
+    }
+    out.sort(function(a, b){ return a.from - b.from; });
+    return out;
+  }
+  function cardWindow(b, d){
+    var today = todayDate(), start = -1;
+    for (var i = 0; i < HORIZON; i++) { if (canPay(addDays(today, i), b, d)) { start = i; break; } }
+    if (start < 0) return null;
+    var end = start;
+    while (end + 1 < HORIZON && canPay(addDays(today, end + 1), b, d)) end++;
+    return { from: addDays(today, start), to: addDays(today, end) };
+  }
+  function dShort(dt){ return dt.toLocaleDateString(T().locale, { day:"numeric", month:"short" }); }
+  function dLong(dt){ return dt.toLocaleDateString(T().locale, { weekday:"short", day:"numeric", month:"short" }); }
+  function rangeShort(r){ return +r.from === +r.to ? dLong(r.from) : dLong(r.from) + " – " + dLong(r.to); }
+
+  function cardLabel(c, i){
+    var s = [c.bank.trim(), c.variant.trim()].filter(Boolean).join(" ");
+    return s || (T().card + " " + (i + 1));
+  }
+  function meetHTML(cards, extraNote){
+    var t = T(), list = [], missing = 0;
+    cards.forEach(function(c, i){
+      if (isBlank(c)) return;
+      var b = dayNum(c.billDay), d = dayNum(c.dueDay);
+      if (b && d) list.push({ b: b, d: d, label: cardLabel(c, i) }); else missing++;
+    });
+    if (!list.length) return '<p class="empty">' + esc(t.meetEmpty) + '</p>';
+    var plan = planMeetings(list), html = "";
+    if (plan.length === 1) {
+      var m = plan[0], one = +m.from === +m.to;
+      html += '<div class="range' + (one ? ' one' : '') + '">';
+      if (one) html += '<div class="day"><small>' + esc(t.on) + '</small><strong>' + esc(dLong(m.from)) + '</strong></div>';
+      else html += '<div class="day"><small>' + esc(t.from) + '</small><strong>' + esc(dLong(m.from)) + '</strong></div>' +
+                   '<span class="to" aria-hidden="true">→</span>' +
+                   '<div class="day"><small>' + esc(t.to) + '</small><strong>' + esc(dLong(m.to)) + '</strong></div>';
+      html += '</div><p class="note">' + (list.length === 1 ? esc(t.meetAll1) : fmt(t.meetAll, { n: list.length })) + '</p>';
+    } else if (plan.length > 1) {
+      html += '<p class="note" style="margin:0 0 12px">' + fmt(t.meetSplit, { n: plan.length }) + '</p><ol class="mlist">';
+      plan.forEach(function(m, i){
+        html += '<li><div class="mt"><span class="mn">' + esc(fmt(t.meeting, { n: i + 1 })) + '</span><span class="md">' + esc(rangeShort(m)) + '</span></div>' +
+                '<div class="mc">' + m.cards.map(function(k){ return esc(list[k].label); }).join(" · ") + '</div></li>';
+      });
+      html += '</ol>';
+    }
+    if (missing) html += '<p class="warnline">' + esc(fmt(t.missing, { n: missing })) + '</p>';
+    if (extraNote) html += '<p class="note">' + esc(extraNote) + '</p>';
+    return html;
+  }
+  function renderMeet(){ $("#meet-body").innerHTML = meetHTML(state.cards); }
+
+  /* ---------- views ---------- */
+  function showView(v){
+    view = v;
+    $("#loading-view").hidden = v !== "loading";
+    $("#form-view").hidden = v !== "form";
+    $("#done-view").hidden = v !== "done";
+    $("#bar").hidden = v !== "form";
+    $("#toast").hidden = true;
+  }
+  function applyStatic(){
+    var t = T();
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-t]").forEach(function(el){ var k = el.getAttribute("data-t"); if (t[k] != null) el.textContent = t[k]; });
+    document.querySelectorAll("[data-tph]").forEach(function(el){ var k = el.getAttribute("data-tph"); if (t[k] != null) el.placeholder = t[k]; });
+    $("#lang-en").setAttribute("aria-pressed", lang === "en");
+    $("#lang-hi").setAttribute("aria-pressed", lang === "hi");
+    $("#title").textContent = auth ? t.titleBack : t.title;
+    $("#lede").textContent = auth ? t.ledeBack : t.lede;
+    $("#submit-label").textContent = submitting ? t.saving : (auth ? t.saveBack : t.save);
+  }
+  function renderWho(){
+    $("#who").hidden = !auth;
+    document.querySelectorAll(".only-new").forEach(function(el){ el.hidden = !!auth; });
+    if (!auth) return;
+    $("#who-av").textContent = (auth.name || "?").trim().charAt(0).toUpperCase();
+    $("#who-name").textContent = auth.name;
+    $("#who-mobile").textContent = prettyMobile(auth.mobile);
+  }
+  function showForm(){
+    showErrors = false;
+    $("#bar-msg").hidden = true;
+    applyStatic(); renderWho();
+    $("#f-name").value = state.name;
+    $("#f-mobile").value = state.mobile;
+    $("#f-email").value = state.email || "";
+    renderCards(); updateSummary(); renderMeet();
+    showView("form");
+  }
+
+  /* ---------- cards ---------- */
+  var ICON_X = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+  var ICON_CAL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>';
+  var ICON_CLOCK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>';
+
+  function cardHTML(c, i){
+    var t = T(), id = c.id;
+    var nets = NETWORKS.map(function(n, k){
+      return '<label class="net"><input type="radio" name="net-' + id + '" id="net-' + id + '-' + k + '" value="' + n + '" data-k="network"><span>' + n + '</span></label>';
+    }).join("");
+    return '' +
+      '<div class="card-head">' +
+        '<span class="card-no">' + t.card + ' ' + (i + 1) + '</span>' +
+        '<span class="card-title" id="title-' + id + '"></span>' +
+        '<span class="chip" id="chip-' + id + '" hidden></span>' +
+        '<button type="button" class="icon-btn" data-remove="' + id + '" aria-label="' + t.remove + ' ' + t.card + ' ' + (i + 1) + '">' + ICON_X + '</button>' +
+      '</div>' +
+      '<div class="grid">' +
+        '<div class="field span2">' +
+          '<label for="bank-' + id + '">' + t.bank + '</label>' +
+          '<input id="bank-' + id + '" data-k="bank" type="text" maxlength="60" autocomplete="off" placeholder="' + t.bankPh + '">' +
+          '<p class="err" id="err-bank-' + id + '"></p>' +
+        '</div>' +
+        '<div class="field span2">' +
+          '<label for="variant-' + id + '">' + t.variant + '<span class="sub">' + t.variantSub + '</span></label>' +
+          '<input id="variant-' + id + '" data-k="variant" type="text" maxlength="60" autocomplete="off" placeholder="' + t.variantPh + '">' +
+          '<p class="err" id="err-variant-' + id + '"></p>' +
+        '</div>' +
+        '<fieldset class="field span2">' +
+          '<legend>' + t.network + '<span class="sub">' + t.networkSub + '</span></legend>' +
+          '<div class="nets" id="nets-' + id + '">' + nets + '</div>' +
+          '<p class="err" id="err-network-' + id + '"></p>' +
+        '</fieldset>' +
+        '<div class="field span2">' +
+          '<label for="amount-' + id + '">' + t.outstanding + '</label>' +
+          '<div class="prefix rupee"><span>₹</span><input id="amount-' + id + '" data-k="amount" type="text" inputmode="decimal" maxlength="16" autocomplete="off" placeholder="45,000"></div>' +
+          '<p class="hint" id="words-' + id + '"></p>' +
+          '<p class="err" id="err-amount-' + id + '"></p>' +
+        '</div>' +
+        '<div class="field">' +
+          '<label for="billDay-' + id + '">' + t.billing + '<span class="sub">' + t.billingSub + '</span></label>' +
+          '<input id="billDay-' + id + '" data-k="billDay" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" autocomplete="off" placeholder="' + t.billPh + '">' +
+          '<p class="err" id="err-billDay-' + id + '"></p>' +
+        '</div>' +
+        '<div class="field">' +
+          '<label for="dueDay-' + id + '">' + t.due + '<span class="sub">' + t.dueSub + '</span></label>' +
+          '<input id="dueDay-' + id + '" data-k="dueDay" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" autocomplete="off" placeholder="' + t.duePh + '">' +
+          '<p class="err" id="err-dueDay-' + id + '"></p>' +
+        '</div>' +
+        '<div class="span2 window" id="win-' + id + '" hidden>' + ICON_CAL + '<span id="wintext-' + id + '"></span></div>' +
+        '<div class="span2 later" id="later-' + id + '" hidden>' + ICON_CLOCK + '<span id="latertext-' + id + '"></span></div>' +
+      '</div>';
+  }
+
+  function renderCards(){
+    var list = $("#cards"), t = T();
+    list.innerHTML = "";
+    state.cards.forEach(function(c, i){
+      var el = document.createElement("section");
+      el.className = "card";
+      el.dataset.id = c.id;
+      el.setAttribute("aria-label", t.card + " " + (i + 1));
+      el.innerHTML = cardHTML(c, i);
+      list.appendChild(el);
+      ["bank","variant","amount","billDay","dueDay"].forEach(function(k){ $("#" + k + "-" + c.id, el).value = c[k]; });
+      var k = NETWORKS.indexOf(c.network);
+      if (k >= 0) $("#net-" + c.id + "-" + k, el).checked = true;
+      el.querySelector("[data-remove]").hidden = state.cards.length < 2 && !c.cardId;
+      updateCard(c.id);
+    });
+    var n = state.cards.length;
+    $("#count").textContent = n === 1 ? t.countN1 : fmt(t.countN, { n: n });
+  }
+
+  function approx(n){
+    var t = lang === "en" ? { k:"thousand", l:"lakh", c:"crore" } : { k:"हज़ार", l:"लाख", c:"करोड़" };
+    function tr(v){ return String(Number(v.toFixed(2))); }
+    if (!(n >= 1000)) return "";
+    if (n >= 1e7) return "≈ ₹" + tr(n / 1e7) + " " + t.c;
+    if (n >= 1e5) return "≈ ₹" + tr(n / 1e5) + " " + t.l;
+    return "≈ ₹" + tr(n / 1e3) + " " + t.k;
+  }
+  function isBlank(c){ return !c.cardId && FIELDS.every(function(k){ return !String(c[k] || "").trim(); }); }
+  function missingList(c){
+    var t = T(), m = [];
+    if (!c.variant.trim()) m.push(t.mVariant);
+    if (NETWORKS.indexOf(c.network) < 0) m.push(t.mNetwork);
+    if (!(parseAmt(c.amount) > 0)) m.push(t.mAmount);
+    if (!dayNum(c.billDay)) m.push(t.mBill);
+    if (!dayNum(c.dueDay)) m.push(t.mDue);
+    return m;
+  }
+  function cardErrors(c){
+    var t = T(), e = {};
+    if (isBlank(c)) return e;
+    if (!c.bank.trim()) e.bank = t.eBank;
+    if (String(c.amount).trim() && !(parseAmt(c.amount) > 0)) e.amount = t.eAmount;
+    if (String(c.billDay).trim() && !dayNum(c.billDay)) e.billDay = t.eBill;
+    if (String(c.dueDay).trim() && !dayNum(c.dueDay)) e.dueDay = t.eDue;
+    return e;
+  }
+  function paint(ctl, errEl, msg){
+    if (!ctl || !errEl) return;
+    errEl.textContent = msg || "";
+    ctl.classList.toggle("invalid", !!msg);
+    if (msg) ctl.setAttribute("aria-invalid", "true"); else ctl.removeAttribute("aria-invalid");
+  }
+  function ctlFor(k, id){ return k === "network" ? $("#nets-" + id) : $("#" + k + "-" + id); }
+  function find(id){ for (var i = 0; i < state.cards.length; i++) if (state.cards[i].id === id) return state.cards[i]; return null; }
+
+  function updateCard(id){
+    var c = find(id); if (!c) return;
+    var t = T();
+    var title = [c.bank.trim(), c.variant.trim()].filter(Boolean).join(" · ");
+    if (c.network) title += (title ? " · " : "") + c.network;
+    $("#title-" + id).textContent = title;
+    var chip = $("#chip-" + id);
+    if (auth || c.cardId) {
+      chip.hidden = false;
+      if (!c.cardId) { chip.textContent = t.chipNew; chip.className = "chip new"; }
+      else if (c.changed) { chip.textContent = t.chipEdited; chip.className = "chip edited"; }
+      else { chip.textContent = t.chipSaved; chip.className = "chip saved"; }
+    } else chip.hidden = true;
+    var a = parseAmt(c.amount);
+    $("#words-" + id).textContent = a > 0 ? approx(a) : "";
+    var b = dayNum(c.billDay), d = dayNum(c.dueDay);
+    var w = (b && d) ? cardWindow(b, d) : null;
+    $("#win-" + id).hidden = !w;
+    if (w) $("#wintext-" + id).innerHTML = fmt(t.payable, { range: esc(+w.from === +w.to ? dShort(w.from) : dShort(w.from) + " – " + dShort(w.to)) });
+    var miss = c.bank.trim() ? missingList(c) : [];
+    $("#later-" + id).hidden = !miss.length;
+    $("#latertext-" + id).textContent = miss.length ? fmt(t.later, { list: miss.join(", ") }) : "";
+    var errs = showErrors ? cardErrors(c) : {};
+    FIELDS.forEach(function(k){ paint(ctlFor(k, id), $("#err-" + k + "-" + id), errs[k]); });
+  }
+
+  function detailErrors(){
+    var t = T(), e = {};
+    if (String(state.email || "").trim() && !validEmail(state.email)) e.email = t.eEmail;
+    if (auth) return e;
+    if (!state.name.trim()) e.name = t.eName;
+    if (!/^[6-9]\d{9}$/.test(mobileDigits(state.mobile))) e.mobile = t.eMobile;
+    return e;
+  }
+  function paintDetails(){
+    var e = showErrors ? detailErrors() : {};
+    paint($("#f-name"), $("#err-name"), e.name);
+    paint($("#f-mobile"), $("#err-mobile"), e.mobile);
+    paint($("#f-email"), $("#err-email"), e.email);
+  }
+  function firstInvalid(){
+    var e = detailErrors();
+    if (e.name) return $("#f-name");
+    if (e.mobile) return $("#f-mobile");
+    if (e.email) return $("#f-email");
+    for (var i = 0; i < state.cards.length; i++) {
+      var c = state.cards[i], ce = cardErrors(c);
+      for (var j = 0; j < FIELDS.length; j++) if (ce[FIELDS[j]]) return $("#" + FIELDS[j] + "-" + c.id);
+    }
+    var hasCard = state.cards.some(function(c){ return !isBlank(c); });
+    if (!hasCard && !state.removed.length) {
+      var first = state.cards[0];
+      if (first) { paint($("#bank-" + first.id), $("#err-bank-" + first.id), T().eBank); return $("#bank-" + first.id); }
+    }
+    return null;
+  }
+
+  function updateSummary(){
+    var t = T(), total = 0, n = 0;
+    state.cards.forEach(function(c){ if (isBlank(c)) return; n++; var a = parseAmt(c.amount); if (a > 0) total += a; });
+    $("#sum-n").textContent = n === 1 ? t.sumN1 : fmt(t.sumN, { n: n });
+    $("#sum-t").textContent = "₹" + inr(total);
+    if (showErrors && !firstInvalid()) $("#bar-msg").hidden = true;
+  }
+  function refreshAll(){ updateSummary(); renderMeet(); saveDraft(); }
+
+  /* ---------- events ---------- */
+  function onCardInput(e){
+    var el = e.target, k = el.dataset && el.dataset.k;
+    if (!k) return;
+    var box = el.closest(".card"); if (!box) return;
+    var c = find(box.dataset.id); if (!c) return;
+    var v = el.value;
+    if (k === "amount") { var s = v.replace(/[^\d.,]/g, ""); if (s !== v) el.value = s; v = s; }
+    if (k === "billDay" || k === "dueDay") { var dd = v.replace(/\D/g, "").slice(0, 2); if (dd !== v) el.value = dd; v = dd; }
+    if (k === "network" && !el.checked) return;
+    if (c[k] === v) return;
+    c[k] = v;
+    if (c.cardId) c.changed = true;
+    updateCard(c.id); refreshAll();
+  }
+  var cardsEl = $("#cards");
+  cardsEl.addEventListener("input", onCardInput);
+  cardsEl.addEventListener("change", onCardInput);
+  cardsEl.addEventListener("focusout", function(e){
+    var el = e.target;
+    if (!el.dataset || el.dataset.k !== "amount") return;
+    var c = find(el.closest(".card").dataset.id); if (!c) return;
+    var a = parseAmt(el.value);
+    if (a > 0) { el.value = inr(a); c.amount = el.value; saveDraft(); }
+  });
+
+  var lastRemoved = null, toastTimer;
+  cardsEl.addEventListener("click", function(e){
+    var b = e.target.closest("[data-remove]"); if (!b) return;
+    var id = b.getAttribute("data-remove"), idx = -1;
+    state.cards.forEach(function(c, i){ if (c.id === id) idx = i; });
+    if (idx < 0) return;
+    var card = state.cards[idx];
+    if (state.cards.length < 2 && !card.cardId) return;
+    lastRemoved = { card: card, index: idx };
+    state.cards.splice(idx, 1);
+    if (card.cardId) state.removed.push(card.cardId);
+    if (!state.cards.length) state.cards.push(blank());
+    renderCards(); refreshAll();
+    $("#toast-text").textContent = card.cardId ? T().removedSaved : T().removed;
+    $("#toast").hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ $("#toast").hidden = true; lastRemoved = null; }, 7000);
+  });
+  $("#toast-undo").addEventListener("click", function(){
+    if (!lastRemoved) return;
+    var c = lastRemoved.card;
+    if (c.cardId) state.removed = state.removed.filter(function(x){ return x !== c.cardId; });
+    if (state.cards.length === 1 && isBlank(state.cards[0])) state.cards = [];
+    state.cards.splice(Math.min(lastRemoved.index, state.cards.length), 0, c);
+    lastRemoved = null;
+    $("#toast").hidden = true;
+    renderCards(); refreshAll();
+    var el = document.querySelector('.card[data-id="' + c.id + '"]');
+    if (el) el.scrollIntoView({ block: "center" });
+  });
+
+  $("#add").addEventListener("click", function(){
+    var c = blank();
+    state.cards.push(c);
+    renderCards(); refreshAll();
+    var el = document.querySelector('.card[data-id="' + c.id + '"]');
+    if (el) {
+      var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      el.scrollIntoView({ block: "center", behavior: reduce ? "auto" : "smooth" });
+      var s = $("#bank-" + c.id); if (s) s.focus({ preventScroll: true });
+    }
+  });
+
+  $("#f-name").addEventListener("input", function(e){ state.name = e.target.value; paintDetails(); refreshAll(); });
+  $("#f-mobile").addEventListener("input", function(e){
+    var v = e.target.value.replace(/[^\d+ ]/g, "");
+    if (v !== e.target.value) e.target.value = v;
+    state.mobile = v; paintDetails(); refreshAll();
+  });
+  $("#f-email").addEventListener("input", function(e){ state.email = e.target.value; paintDetails(); refreshAll(); });
+  $("#form").addEventListener("submit", function(e){ e.preventDefault(); });
+
+  $("#not-you").addEventListener("click", function(){
+    auth = null; store(AUTH_KEY, null); store(DRAFT_KEY, null);
+    state = freshState(); showForm(); window.scrollTo(0, 0);
+  });
+
+  document.querySelectorAll(".lang button").forEach(function(b){
+    b.addEventListener("click", function(){
+      lang = b.getAttribute("data-lang");
+      store(LKEY, lang);
+      applyStatic(); paintDetails(); renderCards(); updateSummary(); renderMeet();
+      if (view === "done") fillDone();
+      var m = $("#bar-msg");
+      if (!m.hidden && showErrors && firstInvalid()) m.textContent = T().fix;
+    });
+  });
+
+  /* ---------- talking to the Google Sheet ---------- */
+  function post(p){
+    return fetch(SHEET_URL, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(p), redirect: "follow" })
+      .then(function(r){ return r.json(); });
+  }
+  function fromServer(c){
+    var b = blank();
+    b.cardId = String(c.id || "");
+    b.bank = String(c.bank || ""); b.variant = String(c.variant || "");
+    b.network = NETWORKS.indexOf(c.network) >= 0 ? c.network : "";
+    b.amount = (c.amount !== "" && c.amount != null && Number(c.amount) > 0) ? inr(Number(c.amount)) : "";
+    b.billDay = c.billDay ? String(c.billDay) : ""; b.dueDay = c.dueDay ? String(c.dueDay) : "";
+    return b;
+  }
+  function setAuth(res){
+    auth = { key: res.key, name: res.name, mobile: res.mobile };
+    store(AUTH_KEY, res.key);
+    store(DRAFT_KEY, null);
+    state = { name: res.name, mobile: res.mobile, email: String(res.email || ""), cards: (res.cards || []).map(fromServer), removed: [] };
+    if (!state.cards.length) state.cards.push(blank());
+  }
+
+  var pendingKey = null;
+  function loadSaved(key){
+    pendingKey = key;
+    $("#load-spin").hidden = false;
+    $("#load-text").textContent = T().loading;
+    $("#load-actions").hidden = true;
+    showView("loading");
+    post({ action: "load", key: key }).then(function(res){
+      if (res && res.ok) { setAuth(res); showForm(); return; }
+      if (res && res.error === "not_found") { store(AUTH_KEY, null); state = loadDraft() || freshState(); showForm(); return; }
+      throw new Error("load");
+    }).catch(function(){
+      $("#load-spin").hidden = true;
+      $("#load-text").textContent = T().loadErr;
+      $("#load-actions").hidden = false;
+    });
+  }
+  $("#load-retry").addEventListener("click", function(){ if (pendingKey) loadSaved(pendingKey); });
+  $("#load-fresh").addEventListener("click", function(){ store(AUTH_KEY, null); auth = null; state = freshState(); showForm(); });
+
+  function barMsg(text, info){
+    var m = $("#bar-msg");
+    m.textContent = text; m.classList.toggle("info", !!info); m.hidden = !text;
+  }
+  function setBusy(on){
+    submitting = on;
+    $("#submit").disabled = on;
+    $("#submit-label").textContent = on ? T().saving : (auth ? T().saveBack : T().save);
+  }
+
+  var done = null; // { mode: "saved" | "existing", name, mobile, cards }
+  function myLink(){ return location.origin + location.pathname + "?c=" + (auth ? auth.key : ""); }
+  function fillDone(){
+    if (!done) return;
+    var t = T();
+    $("#done-title").textContent = fmt(t.doneTitle, { name: done.name });
+    if (done.mode === "saved") {
+      $("#done-text").textContent = t.doneSaved;
+      $("#done-text2").hidden = true;
+      $("#done-meet-body").innerHTML = meetHTML(done.cards);
+      $("#linkbox").hidden = false;
+      $("#my-link").textContent = myLink();
+      $("#back-edit").textContent = t.editCards;
+    } else {
+      $("#done-text").textContent = fmt(t.doneExisting, { mobile: prettyMobile(done.mobile) });
+      $("#done-text2").textContent = t.doneExisting2;
+      $("#done-text2").hidden = false;
+      $("#done-meet-body").innerHTML = meetHTML(done.cards, t.existingMeet);
+      $("#linkbox").hidden = true;
+      $("#back-edit").textContent = t.addMore;
+    }
+  }
+  $("#back-edit").addEventListener("click", function(){
+    if (!auth) state = freshState();
+    showForm(); window.scrollTo(0, 0);
+  });
+  $("#copy-link").addEventListener("click", function(){
+    var txt = myLink(), note = $("#copy-note");
+    function fallback(){
+      try { var r = document.createRange(); r.selectNodeContents($("#my-link")); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); } catch (e) {}
+      note.textContent = T().selectCopy;
+    }
+    try { navigator.clipboard.writeText(txt).then(function(){ note.textContent = T().copied; }, fallback); } catch (e) { fallback(); }
+  });
+
+  $("#submit").addEventListener("click", function(){
+    if (submitting) return;
+    showErrors = true;
+    paintDetails();
+    state.cards.forEach(function(c){ updateCard(c.id); });
+    var bad = firstInvalid();
+    if (bad) {
+      barMsg(T().fix);
+      bad.scrollIntoView({ block: "center" });
+      bad.focus({ preventScroll: true });
+      return;
+    }
+    if (!SHEET_URL) { barMsg(T().preview, true); return; }
+    barMsg("");
+    if (!subId) subId = "S" + Date.now().toString(36).toUpperCase() + Math.random().toString(36).slice(2, 6).toUpperCase();
+    var filled = state.cards.filter(function(c){ return !isBlank(c); });
+    var p = {
+      action: "save", sid: subId, lang: lang, website: $("#f-website").value,
+      key: auth ? auth.key : "",
+      name: auth ? auth.name : state.name.trim(),
+      mobile: auth ? auth.mobile : mobileDigits(state.mobile),
+      email: String(state.email || "").trim(),
+      removed: state.removed.slice(),
+      cards: filled.map(function(c){
+        var a = parseAmt(c.amount);
+        return { id: c.cardId, bank: c.bank.trim(), variant: c.variant.trim(), network: c.network,
+                 amount: a > 0 ? a : "", billDay: dayNum(c.billDay) || "", dueDay: dayNum(c.dueDay) || "" };
+      })
+    };
+    var snapshot = filled.map(function(c){ var o = blank(); FIELDS.forEach(function(k){ o[k] = c[k]; }); return o; });
+    setBusy(true);
+    post(p).catch(function(){ return post(p); }).then(function(res){
+      setBusy(false);
+      subId = null;
+      if (res && res.ok && res.key) {
+        setAuth(res);
+        done = { mode: "saved", name: res.name, mobile: res.mobile, cards: state.cards };
+      } else if (res && res.ok && res.existing) {
+        store(DRAFT_KEY, null);
+        done = { mode: "existing", name: p.name, mobile: p.mobile, cards: snapshot };
+        state = freshState();
+      } else if (res && res.error === "not_found") {
+        store(AUTH_KEY, null); auth = null;
+        barMsg(T().linkExpired); return;
+      } else { barMsg(T().saveErr); return; }
+      applyStatic(); fillDone(); showView("done"); window.scrollTo(0, 0);
+    }).catch(function(){ setBusy(false); barMsg(T().saveErr); });
+  });
+
+  /* ---------- start ---------- */
+  applyStatic();
+  var urlKey = null;
+  try {
+    var q = new URLSearchParams(location.search).get("c");
+    if (q && /^[A-F0-9]{12}$/i.test(q)) urlKey = q.toUpperCase();
+    if (q && history.replaceState) history.replaceState(null, "", location.pathname + location.hash);
+  } catch (e) {}
+  var key = urlKey || read(AUTH_KEY);
+  if (key && SHEET_URL) {
+    loadSaved(key);
+  } else {
+    state = loadDraft() || freshState();
+    showForm();
+  }
+})();
+</script>
+</body>
+</html>
